@@ -1,0 +1,50 @@
+/* Toolbar.css */
+
+.toolbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
+	background: dodgerblue; /* FIXME */
+}
+
+.toolbar-navigation {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 1rem;
+}
+
+.toolbar-logo a {
+	color: white;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.spacer {
+	/* This takes all available space between
+	the logo and the navigation items */
+	flex: 1;
+}
+
+.toolbar-navigation-items ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.toolbar-navigation-items li {
+	padding: 0 0.5rem;
+}
+
+.toolbar-navigation-items a {
+	color: white;
+	text-decoration: none;
+}
+
+.toolbar-navigation-items a:hover,
+.toolbar-navigation-items a:active {
+	color: darkorange;
+}
