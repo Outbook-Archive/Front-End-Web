@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Toolbar from '../components/Toolbar/Toolbar';
+import Toolbar from '../components/Toolbar/Toolbar'; /* FIXME: change to navbar */
 
 import Landing from './landing/Landing'
-import Dashboard from './dashboard/Dashboard'
+import Dashboard from './Dashboard/Dashboard'
 
 
 class App extends Component {
@@ -12,10 +12,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Toolbar />
-          <main style={{marginTop: '54px'}}>
+          <div style={{marginTop: '54px'}}>
+          {/*<div>*/}
             <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard} />
-          </main>
+          </div>
         </div>
       </BrowserRouter>
     );
