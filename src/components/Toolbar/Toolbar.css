@@ -17,6 +17,7 @@
 }
 
 .toolbar-logo a {
+	padding-left: 1rem;
 	color: white;
 	text-decoration: none;
 	font-size: 2rem;
