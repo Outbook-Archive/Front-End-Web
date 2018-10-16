@@ -1,6 +1,6 @@
 /* Toolbar.css */
 
-.toolbar {
+.navbar {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -9,14 +9,14 @@
 	background: dodgerblue; /* FIXME */
 }
 
-.toolbar-navigation {
+.navbar-navigation {
 	display: flex;
 	align-items: center;
 	height: 100%;
 	padding: 0 1rem;
 }
 
-.toolbar-logo a {
+.navbar-logo a {
 	padding-left: 1rem;
 	color: white;
 	text-decoration: none;
@@ -29,39 +29,39 @@
 	flex: 1;
 }
 
-.toolbar-navigation-items ul {
+.navbar-navigation-items ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
 }
 
-.toolbar-navigation-items li {
+.navbar-navigation-items li {
 	padding: 0 0.5rem;
 }
 
-.toolbar-navigation-items a {
+.navbar-navigation-items a {
 	color: white;
 	text-decoration: none;
 }
 
-.toolbar-navigation-items a:hover,
-.toolbar-navigation-items a:active {
+.navbar-navigation-items a:hover,
+.navbar-navigation-items a:active {
 	color: darkorange;
 }
 
 @media (max-width: 768px) {
-	.toolbar-navigation-items {
+	.navbar-navigation-items {
 		display: none;
 	}
 }
 
 @media (min-width: 769px) {
-	.toolbar-toggle-btn {
+	.navbar-toggle-btn {
 		display: none;
 	}
 
-	.toolbar-logo {
+	.navbar-logo {
 		margin-left: 0;
 	}
 }

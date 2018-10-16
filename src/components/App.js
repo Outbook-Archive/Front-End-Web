@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import Toolbar from '../components/Toolbar/Toolbar'; /* FIXME: change to navbar */
+import Navbar from '../components/Navbar/Navbar';
 import SideDrawer from '../components/SideDrawer/SideDrawer';
 import Backdrop from '../components/Backdrop/Backdrop';
 
 import Landing from './landing/Landing';
 import Dashboard from './Dashboard/Dashboard';
 
-import './app.css';
+import './App.css';
 
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App" style={{height: '100%'}}>
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div>
