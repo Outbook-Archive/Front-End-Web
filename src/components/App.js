@@ -20,7 +20,7 @@ class App extends Component {
     this.setState( (prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen }
     })
-  }
+  };
 
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
