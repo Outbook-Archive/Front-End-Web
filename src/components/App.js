@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 import { BrowserRouter, Route } from 'react-router-dom'
+
 import Toolbar from '../components/Toolbar/Toolbar'; /* FIXME: change to navbar */
 import SideDrawer from '../components/SideDrawer/SideDrawer';
 import Backdrop from '../components/Backdrop/Backdrop';
@@ -14,34 +16,36 @@ class App extends Component {
   state = {
     sideDrawerOpen: false
   };
+
   drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return { sideDrawerOpen: !prevState.sideDrawerOpen }
+    this.setState( (prevState) => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
 
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
+
   render() {
-    let sideDrawer;
     let backDrop;
 
-    if (this.setState.sideDrawerOpen) {
-      sideDrawer = <SideDrawer />;
-      backDrop = <Backdrop />;
+    if (this.state.sideDrawerOpen) {
+      backDrop = <Backdrop click={this.backdropClickHandler} />;
     }
     return (
       <BrowserRouter>
         <div className="App" style={{height: '100%'}}>
-          <Toolbar />
-          {sideDrawer}
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div>
-          {/*<div>*/}
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/' component={Landing}/>
+            <Route exact path='/dashboard' component={Dashboard}/>
           </div>
         </div>
       </BrowserRouter>
-    );
+    )
   }
 }
 
