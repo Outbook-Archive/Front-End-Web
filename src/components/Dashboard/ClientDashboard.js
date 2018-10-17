@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DayPicker from './DayPicker';
-import './styles.css';
+import './Dashboard.css';
 
 class ClientDashboard extends Component {
   render() {

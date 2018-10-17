@@ -6,7 +6,7 @@ import ClientDashboard from './ClientDashboard';
 class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <div className="dashboard">
         <ClientDashboard />
 
       </div>
