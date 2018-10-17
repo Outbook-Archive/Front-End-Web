@@ -76,3 +76,59 @@
 
 .day-date {
 }
+
+.time-picker-container {
+	position: absolute;
+	top: 56px;
+	left: 0;
+	height: calc(100vh - 56px);
+	width: 100%;
+	z-index: 5;
+	background-color: white;
+}
+
+.time-picker-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.time-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 3em;
+}
+
+.time {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid #2980b9;
+	border-radius: 5rem;
+	width: 10rem;
+	margin-left: 2.4rem;
+	padding: 0.4em 0;
+	color: #7f8c8d;
+	font-weight: bold;
+	font-size: 1.1rem;
+	transition: all 250ms;
+}
+
+.time:hover {
+	transform: scale(1.04);
+	color: #34495e;
+	border-color: #34495e;
+	cursor: pointer;
+}
+
+.time p {
+	margin: 0;
+	padding: 0;
+}
+
+.time-text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #34495e;
+}
