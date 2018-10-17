@@ -76,3 +76,15 @@
 
 .day-date {
 }
+
+@media (max-width: 768px) {
+	.day-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.day {
+		margin: 0.5rem;
+	}
+}
