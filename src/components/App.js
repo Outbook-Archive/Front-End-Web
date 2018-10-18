@@ -34,7 +34,7 @@ class App extends Component {
     }
     return (
       <BrowserRouter>
-        <div className="App" style={{height: '100%'}}>
+        <div className="App">
           <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
