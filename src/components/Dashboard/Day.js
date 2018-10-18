@@ -20,7 +20,7 @@ class Day extends Component {
     console.log(this.state.renderTimePicker)
     this.setState({ renderTimePicker: true })
     console.log('clicked')
-    console.log(this.state.renderTimePicker)
+    console.log(this.state.renderTimePicker
   }
 
   renderTimePicker(){

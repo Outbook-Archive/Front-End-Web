@@ -79,84 +79,16 @@
 }
 
 .day-date {
-	color: var(--dark-grey);
 }
 
-.time-picker-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: absolute;
-	top: 56px;
-	left: 0;
-	height: calc(100vh - 56px);
-	width: 100%;
-	z-index: 5;
-	background-color: white;
-}
-
-.time-picker-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.time-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 3em;
-}
-
-.time {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border: 5px solid var(--medium-blue);
-	border-radius: 5rem;
-	width: 10rem;
-	margin-bottom: 1.4rem;
-	padding: 0.4em 0;
-	color: var(--dark-grey);
-	font-weight: bold;
-	font-size: 1.1rem;
-	transition: all 250ms;
-}
-
-/*.time:hover {*/
-	/*transform: scale(1.04);*/
-	/*color: #34495e;*/
-	/*border-color: #34495e;*/
-	/*cursor: pointer;*/
-/*}*/
-
-.time-picker-content {
-	text-align: center;
-	margin: 3rem 0;
-}
-
-.time-picker-content p {
-	color: var(--dark-grey);
-	margin-top: 1rem;
-}
-
-.time-picker-container h1 {
-	margin-bottom: 0;
-}
-
-.time-picker-container h2 {
-	margin-top: -1rem;
-	margin-bottom: 1em;
-}
-
-.time-picker-container p {
-	margin: 0;
-	margin-top: 0.5rem;
-	padding: 0;
-}
-
-.time-text {
-	font-size: 2rem;
-	font-weight: 600;
-	color: var(--dark-blue);
+@media (max-width: 768px) {
+	.day-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.day {
+		margin: 0.5rem;
+	}
 }
