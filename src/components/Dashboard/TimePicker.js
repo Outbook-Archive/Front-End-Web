@@ -8,7 +8,7 @@ class TimePicker extends Component {
       <div className="time-picker-container">
         <div className="time-picker-content">
           <h1>{this.props.day}</h1>
-          <p>The Date</p>
+          <p>{this.props.date}</p>
         </div>
 
         <h1>Select a Time </h1>
