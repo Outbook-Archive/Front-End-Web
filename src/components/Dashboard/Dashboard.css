@@ -1,3 +1,8 @@
+:root {
+	--dark-grey: #7f8c8d;
+	--dark-blue: #34495e;
+	--medium-blue: #2980b9;
+}
 
 .top-bar {
 	display: flex;
@@ -5,7 +10,7 @@
 	height: 50px;
 	width: 100%;
 	margin-bottom: 2rem;
-	margin-top: 3rem;
+	/*margin-top: 3rem;*/
 }
 
 .top-bar-item {
@@ -14,11 +19,11 @@
 }
 
 .top-bar-item.grey {
-	color: #7f8c8d;
+	color: var(--dark-grey);
 }
 
 .top-bar-item.blue {
-	color: #2980b9
+	color: var(--medium-blue);
 }
 
 .right-text {
@@ -31,7 +36,7 @@
 	font-weight: 600;
 	font-size: 1.6rem;
 	/*margin-top: 2.3rem;*/
-	color: #34495e;
+	color: var(--dark-blue);
 }
 
 .day-container {
@@ -45,21 +50,20 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 5px solid #2980b9;
+	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
 	margin-left: 2.4rem;
 	padding: 0.4em 0;
-	color: #7f8c8d;
 	font-weight: bold;
 	font-size: 1.1rem;
-	transition: all 250ms;
+	/*transition: all 250ms;*/
 }
 
 .day:hover {
-	transform: scale(1.04);
-	color: #34495e;
-	border-color: #34495e;
+	/*transform: scale(1.04);*/
+	/*color: #34495e;*/
+	/*border-color: #34495e;*/
 	cursor: pointer;
 }
 
@@ -71,11 +75,94 @@
 .day-text {
 	font-size: 2rem;
 	font-weight: 600;
-	color: #34495e;
+	color: var(--dark-blue);
 }
 
 .day-date {
+	color: var(--dark-grey);
 }
+
+.time-picker-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 56px;
+	left: 0;
+	height: calc(100vh - 56px);
+	width: 100%;
+	z-index: 5;
+	background-color: white;
+	/*cursor: pointer;*/
+}
+
+.time-picker-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.time {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid var(--medium-blue);
+	border-radius: 5rem;
+	width: 10rem;
+	margin-bottom: 1.4rem;
+	padding: 0.4em 0;
+	color: var(--dark-grey);
+	font-weight: bold;
+	font-size: 1.1rem;
+	/*transition: all 250ms;*/
+}
+
+.time:hover {
+/*transform: scale(1.04);*/
+/*color: #34495e;*/
+/*border-color: #34495e;*/
+cursor: pointer;
+}
+
+.time-picker-content {
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.time-picker-content p {
+	color: var(--dark-grey);
+	margin-top: 1rem;
+}
+
+.time-picker-container h1 {
+	margin-bottom: 0;
+}
+
+.time-picker-container h2 {
+	margin-top: -1rem;
+	margin-bottom: 1rem;
+}
+
+.time-picker-container p {
+	margin: 0;
+	padding: 0;
+}
+.time-text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--dark-blue);
+	margin: 0;
+}
+
+.time-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin-top: 3em;
+}
+
 
 @media (max-width: 768px) {
 	.day-container {

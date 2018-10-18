@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import DayPicker from './DayPicker';
+
 import './Dashboard.css';
 
 class ClientDashboard extends Component {
+  constructor(props){
+    super(props)
+  }
+
   render() {
     return (
       <div>
