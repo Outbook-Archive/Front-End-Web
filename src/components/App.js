@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import SideDrawer from '../components/SideDrawer/SideDrawer'
 import Backdrop from '../components/Backdrop/Backdrop'
 
-import Landing from './landing/Landing'
+import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 
 import './App.css'
@@ -38,7 +38,7 @@ class App extends Component {
           <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
-          <div>
+          <div className="landing-container">
             <Route exact path='/' component={Landing}/>
             <Route exact path='/dashboard' component={Dashboard}/>
           </div>

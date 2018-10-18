@@ -11,7 +11,7 @@ class TimePicker extends Component {
           <p>{this.props.date}</p>
         </div>
 
-        <h1>Select a Time </h1>
+        <h2>Select a Time </h2>
 
         <Time time="11:00 am" onClick={console.log("clicked 11:00am")} />
         <Time time="12:00 pm" onClick={console.log("clicked 12:00pm")} />

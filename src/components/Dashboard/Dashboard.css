@@ -137,14 +137,21 @@
 
 .time-picker-content p {
 	color: var(--dark-grey);
+	margin-top: 1rem;
 }
 
 .time-picker-container h1 {
-	margin: 0;
+	margin-bottom: 0;
+}
+
+.time-picker-container h2 {
+	margin-top: -1rem;
+	margin-bottom: 1em;
 }
 
 .time-picker-container p {
 	margin: 0;
+	margin-top: 0.5rem;
 	padding: 0;
 }
 
