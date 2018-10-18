@@ -1,5 +1,7 @@
 :root {
 	--dark-grey: #7f8c8d;
+	--dark-blue: #34495e;
+	--medium-blue: #2980b9;
 }
 
 .top-bar {
@@ -17,11 +19,11 @@
 }
 
 .top-bar-item.grey {
-	color: #7f8c8d;
+	color: var(--dark-grey);
 }
 
 .top-bar-item.blue {
-	color: #2980b9
+	color: var(--medium-blue);
 }
 
 .right-text {
@@ -34,7 +36,7 @@
 	font-weight: 600;
 	font-size: 1.6rem;
 	/*margin-top: 2.3rem;*/
-	color: #34495e;
+	color: var(--dark-blue);
 }
 
 .day-container {
@@ -48,12 +50,11 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 5px solid #2980b9;
+	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
 	margin-left: 2.4rem;
 	padding: 0.4em 0;
-	color: var(--dark-grey);
 	font-weight: bold;
 	font-size: 1.1rem;
 	transition: all 250ms;
@@ -74,10 +75,11 @@
 .day-text {
 	font-size: 2rem;
 	font-weight: 600;
-	color: #34495e;
+	color: var(--dark-blue);
 }
 
 .day-date {
+	color: var(--dark-grey);
 }
 
 .time-picker-container {
@@ -110,12 +112,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 5px solid #2980b9;
+	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
 	margin-bottom: 1.4rem;
 	padding: 0.4em 0;
-	color: #7f8c8d;
+	color: var(--dark-grey);
 	font-weight: bold;
 	font-size: 1.1rem;
 	transition: all 250ms;
@@ -149,5 +151,5 @@
 .time-text {
 	font-size: 2rem;
 	font-weight: 600;
-	color: #34495e;
+	color: var(--dark-blue);
 }
