@@ -7,10 +7,10 @@ class ClientDashboard extends Component {
   constructor(props){
     super(props)
 
-    this.state = {
-      renderTimePicker: false,
-      dayName: ''
-    }
+    // this.state = {
+    //   renderTimePicker: false,
+    //   dayName: ''
+    // }
 
   }
 
