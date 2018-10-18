@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import TimePicker from './TimePicker';
 
 
@@ -15,18 +15,14 @@ class Day extends Component {
     this.handleRenderTime = this.handleRenderTime.bind(this);
   }
 
-
   handleRenderTime() {
-    console.log(this.state.renderTimePicker)
-    this.setState({ renderTimePicker: true })
-    console.log('clicked')
-    console.log(this.state.renderTimePicker
+    this.setState({renderTimePicker: true})
   }
 
-  renderTimePicker(){
+  renderTimePicker() {
     if (this.state.renderTimePicker) {
       return (
-        <TimePicker day={this.props.day} date={this.props.date} />
+        <TimePicker day={this.props.day} date={this.props.date}/>
       )
     } else {
       return null
@@ -36,8 +32,8 @@ class Day extends Component {
   render() {
     return (
       <div onClick={this.handleRenderTime} className="day">
-        <p className="day-text">{ this.props.day }</p>
-        <p className="day-date">{ this.props.date }</p>
+        <p className="day-text">{this.props.day}</p>
+        <p className="day-date">{this.props.date}</p>
         {this.renderTimePicker()}
 
       </div>

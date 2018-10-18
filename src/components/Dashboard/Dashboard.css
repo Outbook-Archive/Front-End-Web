@@ -10,7 +10,7 @@
 	height: 50px;
 	width: 100%;
 	margin-bottom: 2rem;
-	margin-top: 3rem;
+	/*margin-top: 3rem;*/
 }
 
 .top-bar-item {
@@ -57,15 +57,15 @@
 	padding: 0.4em 0;
 	font-weight: bold;
 	font-size: 1.1rem;
-	transition: all 250ms;
+	/*transition: all 250ms;*/
 }
 
-/*.day:hover {*/
+.day:hover {
 	/*transform: scale(1.04);*/
 	/*color: #34495e;*/
 	/*border-color: #34495e;*/
-	/*cursor: pointer;*/
-/*}*/
+	cursor: pointer;
+}
 
 .day p {
 	margin: 0;
@@ -93,6 +93,7 @@
 	width: 100%;
 	z-index: 5;
 	background-color: white;
+	/*cursor: pointer;*/
 }
 
 .time-picker-title {
@@ -114,15 +115,15 @@
 	color: var(--dark-grey);
 	font-weight: bold;
 	font-size: 1.1rem;
-	transition: all 250ms;
+	/*transition: all 250ms;*/
 }
 
-/*.time:hover {*/
+.time:hover {
 /*transform: scale(1.04);*/
 /*color: #34495e;*/
 /*border-color: #34495e;*/
-/*cursor: pointer;*/
-/*}*/
+cursor: pointer;
+}
 
 .time-picker-content {
 	text-align: center;
@@ -145,18 +146,20 @@
 
 .time-picker-container p {
 	margin: 0;
-	margin-top: 0.5rem;
 	padding: 0;
 }
 .time-text {
 	font-size: 2rem;
 	font-weight: 600;
 	color: var(--dark-blue);
+	margin: 0;
 }
 
 .time-container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	align-content: center;
 	margin-top: 3em;
 }
 

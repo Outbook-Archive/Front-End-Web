@@ -6,15 +6,7 @@ import './Dashboard.css';
 class ClientDashboard extends Component {
   constructor(props){
     super(props)
-
-    // this.state = {
-    //   renderTimePicker: false,
-    //   dayName: ''
-    // }
-
   }
-
-
 
   render() {
     return (
