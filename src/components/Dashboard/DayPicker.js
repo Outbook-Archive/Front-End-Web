@@ -24,7 +24,6 @@ class DayPicker extends Component {
     return (
 
       <div className="day-container">
-        {/* FIXME: makes the date correct */}
         <Day day="Mon" date="Sept 15" viewSwitcher={ this.props.viewSwitcher}/>
         <Day day="Tue" date="Sept 16" viewSwitcher={ this.props.viewSwitcher}/>
         <Day day="Wed" date="Sept 17" viewSwitcher={ this.props.viewSwitcher}/>
