@@ -163,6 +163,26 @@ cursor: pointer;
 	margin-top: 3em;
 }
 
+.times-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: baseline;
+	align-items: center;
+
+}
+
+.back-btn {
+	position: relative;
+	z-index: 100;
+	top: 26.5rem;
+	width: 30%;
+	border: 2px solid var(--medium-blue);
+	background-color: var(--medium-blue);
+	color: white;
+	border-radius: 2rem;
+	font-size: 1.5rem;
+	padding: 0.75rem;
+}
 
 @media (max-width: 768px) {
 	.day-container {
