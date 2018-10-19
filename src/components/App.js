@@ -9,6 +9,7 @@ import Backdrop from '../components/Backdrop/Backdrop'
 
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
+import Confirm from './Dashboard/Confirm'
 
 import './App.css'
 import { simpleAction } from "../actions/SimpleAction";
@@ -47,14 +48,15 @@ class App extends Component {
           <div className="landing-container">
             <Route exact path='/' component={Landing}/>
             <Route exact path='/dashboard' component={Dashboard}/>
+            <Route path='/confirm' component={Confirm} />
           </div>
-          <pre>
-            {
-              JSON.stringify(this.props)
-            }
-          </pre>
+          {/*<pre>*/}
+            {/*{*/}
+              {/*JSON.stringify(this.props)*/}
+            {/*}*/}
+          {/*</pre>*/}
 
-          <button onClick={this.simpleAction}>Test redux action</button>
+          {/*<button onClick={this.simpleAction}>Test redux action</button>*/}
         </div>
       </BrowserRouter>
     )

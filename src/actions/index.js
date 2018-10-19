@@ -2,11 +2,26 @@
 src/actions/index.js
  */
 
-import { FETCH_DATE } from './types'
+import { CHOOSE_DAY, CHOOSE_TIME, CANCEL, CONFIRM } from './types'
 
-export const fetchDate = () => async dispatch => {
-  dispatch({
-    type: FETCH_DATE,
-    payload: res.data
-  })
+
+export const chooseDay = (day) => {
+  return {
+    type: CHOOSE_DAY,
+    payload: day
+  }
+};
+
+export const chooseTime = (time) => {
+  return {
+    type: CHOOSE_TIME,
+    payload: time
+  }
+};
+
+export const confirm = () => {
+  return {
+    type: CONFIRM,
+    payload: 'You have scheduled your interview'
+  }
 };
