@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import Navbar from '../components/Navbar/Navbar'
@@ -9,6 +11,15 @@ import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 
 import './App.css'
+import { simpleAction } from "../actions/SimpleAction";
+
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction())
+})
 
 
 class App extends Component {
@@ -26,6 +37,10 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false })
   }
 
+  simpleAction = (event) => {
+    this.props.simpleAction();
+  };
+
   render() {
     let backDrop;
 
@@ -42,10 +57,17 @@ class App extends Component {
             <Route exact path='/' component={Landing}/>
             <Route exact path='/dashboard' component={Dashboard}/>
           </div>
+          <pre>
+            {
+              JSON.stringify(this.props)
+            }
+          </pre>
+
+          <button onClick={this.simpleAction}>Test redux action</button>
         </div>
       </BrowserRouter>
     )
   }
 }
 
-export default App
+export default connect(mapStateToProps, mapDispatchToProps)(App);
