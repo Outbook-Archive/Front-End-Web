@@ -13,15 +13,6 @@ import Dashboard from './Dashboard/Dashboard'
 import './App.css'
 import { simpleAction } from "../actions/SimpleAction";
 
-const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
-
-
 class App extends Component {
   state = {
     sideDrawerOpen: false
@@ -69,5 +60,13 @@ class App extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction())
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
