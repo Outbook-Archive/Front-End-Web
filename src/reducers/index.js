@@ -1,5 +1,5 @@
 /*
-src/reducers/RootReducer.js
+src/reducers/index.js
  */
 
 import { combineReducers } from 'redux';
