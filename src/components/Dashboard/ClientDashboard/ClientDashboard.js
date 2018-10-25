@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DayPicker from './DayPicker';
 
-import './Dashboard.css';
+import '../Dashboard.css';
 import TimePicker from "./TimePicker";
 
 class ClientDashboard extends Component {

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Day from './Day';
 
-import { connect } from 'react-redux'
-import * as actions from '../../actions'
+// import { connect } from 'react-redux'
+// import * as actions from '../../../actions'
 
 
 class DayPicker extends Component {
@@ -13,7 +13,7 @@ class DayPicker extends Component {
   }
 
   componentDidMount() {
-    this.props.chooseDay();
+    // this.props.chooseDay();
   }
 
   click = () => {
@@ -34,8 +34,8 @@ class DayPicker extends Component {
   }
 }
 
-function mapStateToProps({ chooseDay }) {
-  return { chooseDay };
-}
+// function mapStateToProps({ chooseDay }) {
+//   return { chooseDay };
+// }
 
-export default connect(mapStateToProps, actions)(DayPicker);
+export default DayPicker;

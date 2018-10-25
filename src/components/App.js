@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ import Backdrop from '../components/Backdrop/Backdrop'
 
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
-import Confirm from './Dashboard/Confirm'
+import Confirm from './Dashboard/ClientDashboard/Confirm'
 
 import './App.css'
 import { simpleAction } from "../actions/SimpleAction";
@@ -62,13 +62,13 @@ class App extends Component {
     )
   }
 }
+//
+// const mapStateToProps = state => ({
+//   ...state
+// })
+//
+// const mapDispatchToProps = dispatch => ({
+//   simpleAction: () => dispatch(simpleAction())
+// })
 
-const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
