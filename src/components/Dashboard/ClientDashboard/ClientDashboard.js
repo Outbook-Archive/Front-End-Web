@@ -21,10 +21,19 @@ class ClientDashboard extends Component {
   viewSelect() {
     switch (this.state.activeView) {
       case 'dayPicker':
-        return <DayPicker clickedDay={ (day) => this.daySelect(day) }/>;
+        return <DayPicker
+                  clickedDay={ (day) => this.daySelect(day) }
+                />;
+
       case 'timePicker':
-        return <TimePicker clickedTime={ (time) => this.timeSelect(time) }/>;
-      case 'confirmView': return <Confirm/>;
+        return <TimePicker
+                  activeDay={ this.state.activeDay }
+                  clickedTime={ (time) => this.timeSelect(time) }
+                />;
+
+      case 'confirmView':
+        return <Confirm/>;
+
       default:
         return null;
     }
