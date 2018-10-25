@@ -32,7 +32,7 @@ class ClientDashboard extends Component {
                 />;
 
       case 'confirmView':
-        return <Confirm/>;
+        return <Confirm day={this.state.activeDay} time={this.state.activeTime} />;
 
       default:
         return null;
@@ -46,6 +46,7 @@ class ClientDashboard extends Component {
   timeSelect(time) {
     this.setState({ activeTime: time, activeView: 'confirmView' });
   }
+
 
   render() {
 

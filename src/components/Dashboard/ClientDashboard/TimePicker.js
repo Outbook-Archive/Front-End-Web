@@ -7,12 +7,16 @@ class TimePicker extends Component {
 
   render() {
     // Array of Day mini COMPONENTS
-    const times = this.props.activeDay.map((timeData, index) => {
+    const times = this.props.activeDay.times.map((timeData, index) => {
       return <Time time={timeData} clickedTime={() => this.props.clickedTime(timeData.time)}/>
     });
 
     return (
-      <div>{times}</div>
+      <div>
+        {this.props.activeDay.day}
+        {this.props.activeDay.date}
+        {times}
+      </div>
     )
   }
 }

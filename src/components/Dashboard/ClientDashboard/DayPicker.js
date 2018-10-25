@@ -39,7 +39,7 @@ class DayPicker extends Component {
   render() {
     // Array of Day mini COMPONENTS
     const days = MockDays.map((dayData, index) => {
-      return <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData.times)}/>
+      return <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
     });
 
     return (
