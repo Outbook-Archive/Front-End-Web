@@ -1,41 +1,61 @@
-import React, {Component} from 'react';
-import Day from './Day';
+import React, { Component } from 'react';
 
 // import { connect } from 'react-redux'
 // import * as actions from '../../../actions'
 
+const MockDays = [
+  {
+    day : "Monday",
+    date: "10-25-18",
+    times: [
+      {
+      time: "11:00",
+      booked: false
+      },
+      {
+        time: "12:00",
+        booked: false
+      },
+    ]
+  },
+  {
+    day : "Tuesday",
+    date: "10-26-18",
+    times: [
+      {
+        time: "1:00",
+        booked: false
+      },
+      {
+        time: "4:00",
+        booked: false
+      },
+    ]
+  }];
+
 
 class DayPicker extends Component {
-  constructor(props) {
-    super(props)
-
-    this.click = this.click.bind(this)
-  }
-
-  componentDidMount() {
-    // this.props.chooseDay();
-  }
-
-  click = () => {
-    this.props.viewSwitcher()
-  }
 
   render() {
-    return (
+    // Array of Day mini COMPONENTS
+    const days = MockDays.map((dayData, index) => {
+      return <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData.times)}/>
+    });
 
-      <div className="day-container">
-        <Day day="Mon" date="Sept 15" viewSwitcher={ this.props.viewSwitcher}/>
-        <Day day="Tue" date="Sept 16" viewSwitcher={ this.props.viewSwitcher}/>
-        <Day day="Wed" date="Sept 17" viewSwitcher={ this.props.viewSwitcher}/>
-        <Day day="Thu" date="Sept 18" viewSwitcher={ this.props.viewSwitcher}/>
-        <Day day="Fri" date="Sept 19" viewSwitcher={ this.props.viewSwitcher}/>
-      </div>
+    return (
+      <div>{days}</div>
     )
   }
 }
 
-// function mapStateToProps({ chooseDay }) {
-//   return { chooseDay };
-// }
+// Mini COMPONENT
+function Day(props) {
+  return (
+    <div onClick={props.clickedDay} className="day">
+      <p className="day-text">{props.day.day}</p>
+      <p className="day-date">{props.day.date}</p>
+    </div>
+  )
+}
 
 export default DayPicker;
