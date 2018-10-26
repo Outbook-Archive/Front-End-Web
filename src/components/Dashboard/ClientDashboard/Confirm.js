@@ -5,7 +5,6 @@ class Confirm extends Component {
     super(props)
   }
   render() {
-    console.log(this.props.time)
     return(
       <div>
         <h1>Thank you for confirming your interview</h1>

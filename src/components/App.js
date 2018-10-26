@@ -12,12 +12,11 @@ import Dashboard from './Dashboard/Dashboard'
 import Confirm from './Dashboard/ClientDashboard/Confirm'
 
 import './App.css'
-import { simpleAction } from "../actions/SimpleAction";
 
 class App extends Component {
   state = {
     sideDrawerOpen: false
-  }
+  };
 
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {
@@ -27,7 +26,7 @@ class App extends Component {
 
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
-  }
+  };
 
   simpleAction = (event) => {
     this.props.simpleAction();
@@ -50,25 +49,10 @@ class App extends Component {
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
           </div>
-          {/*<pre>*/}
-            {/*{*/}
-              {/*JSON.stringify(this.props)*/}
-            {/*}*/}
-          {/*</pre>*/}
-
-          {/*<button onClick={this.simpleAction}>Test redux action</button>*/}
         </div>
       </BrowserRouter>
     )
   }
 }
-//
-// const mapStateToProps = state => ({
-//   ...state
-// })
-//
-// const mapDispatchToProps = dispatch => ({
-//   simpleAction: () => dispatch(simpleAction())
-// })
 
 export default App;
