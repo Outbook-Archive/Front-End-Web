@@ -101,9 +101,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	top: 56px;
-	left: 0;
+	/*top: 56px;*/
+	/*left: 0;*/
 	width: 100%;
 	z-index: 5;
 	background-color: white;
