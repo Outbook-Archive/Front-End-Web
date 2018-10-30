@@ -5,33 +5,48 @@ import React, { Component } from 'react';
 
 const MockDays = [
   {
-    day : "Monday",
-    date: "10-25-18",
+    day : "Mon",
+    date: "10-22-18",
     times: [
       {
-      time: "11:00",
+      time: "11:00am",
       booked: false
       },
       {
-        time: "12:00",
+        time: "12:00pm",
         booked: false
       },
     ]
   },
   {
-    day : "Tuesday",
-    date: "10-26-18",
+    day : "Tues",
+    date: "10-23-18",
     times: [
       {
-        time: "1:00",
+        time: "1:00pm",
         booked: false
       },
       {
-        time: "4:00",
+        time: "4:00pm",
         booked: false
       },
     ]
-  }];
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+    ]
+  }
+  ];
 
 
 class DayPicker extends Component {
@@ -39,11 +54,15 @@ class DayPicker extends Component {
   render() {
     // Array of Day mini COMPONENTS
     const days = MockDays.map((dayData, index) => {
-      return <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
+      return (
+        <li key={index} className={"day-item"}>
+          <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
+        </li>
+      )
     });
 
     return (
-      <div>{days}</div>
+      <div className={"day-container"}>{days}</div>
     )
   }
 }

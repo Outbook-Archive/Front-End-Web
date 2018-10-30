@@ -7,32 +7,67 @@ import Confirm from "./Confirm";
 
 class ClientDashboard extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {
       activeView: 'dayPicker',
       activeDay: null,
       activeTime: null
     };
-
   }
 
+  backButton(view) {
+    switch (view) {
+      case 'toDayPicker':
+        this.setState({
+          activeView: 'dayPicker',
+          activeDay: null
+        });
+        break;
+      case 'toTimePicker':
+        this.setState({
+          activeView: 'timePicker',
+          activeTime: null
+        });
+        break;
+    }
+  }
 
   viewSelect() {
     switch (this.state.activeView) {
       case 'dayPicker':
-        return <DayPicker
-                  clickedDay={ (day) => this.daySelect(day) }
-                />;
+        return (
+          <div>
+            <div className="dashboard-title">Select a Day</div>
+            <DayPicker
+              clickedDay={ (day) => this.daySelect(day)}
+            />
+          </div>
+        );
 
       case 'timePicker':
-        return <TimePicker
-                  activeDay={ this.state.activeDay }
-                  clickedTime={ (time) => this.timeSelect(time) }
-                />;
+        return (
+          <div>
+            <div className="dashboard-title">Select a Time</div>
+            <TimePicker
+              activeDay={ this.state.activeDay }
+              clickedTime={ (time) => this.timeSelect(time)}
+              backButton={ () => this.backButton('toDayPicker')}
+            />
+          </div>
+        );
 
       case 'confirmView':
-        return <Confirm day={this.state.activeDay} time={this.state.activeTime} />;
+        return (
+          <div>
+            <div className="dashboard-title">Please review your interview day and time</div>
+            <Confirm
+              day={this.state.activeDay}
+              time={this.state.activeTime}
+              backButton={ () => this.backButton('toTimePicker')}
+            />
+          </div>
+        );
 
       default:
         return null;
@@ -47,24 +82,27 @@ class ClientDashboard extends Component {
     this.setState({ activeTime: time, activeView: 'confirmView' });
   }
 
-
   render() {
-
     // Render day, time, or confirm based on state
     const view = this.viewSelect();
 
     return (
-      <div>
-        <div className="top-bar">
-          <div className="top-bar-item grey">15 minute Interview</div>
-          <div className="top-bar-item right-text blue">Pacific Time - US & Canada<br/>12:06am</div>
-        </div>
-        <div className="dashboard-title">Select a Day</div>
+      <div className={"client-dashboard"}>
+        <Topbar />
         {view}
-
       </div>
     )
   }
+}
+
+// Mini COMPONENT
+function Topbar(props) {
+  return (
+    <div className="top-bar">
+      <div className="top-bar-item grey">15 minute Interview</div>
+      <div className="top-bar-item right-text blue">Pacific Time - US & Canada<br/>12:06am</div>
+    </div>
+  )
 }
 
 export default ClientDashboard;

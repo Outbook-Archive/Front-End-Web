@@ -10,7 +10,6 @@
 	height: 50px;
 	width: 100%;
 	margin-bottom: 2rem;
-	/*margin-top: 3rem;*/
 }
 
 .top-bar-item {
@@ -26,8 +25,21 @@
 	color: var(--medium-blue);
 }
 
-.right-text {
+.top-bar-item.right-text {
 	text-align: right;
+}
+
+.dashboard {
+	width: 100%;
+	height: 100%;
+}
+
+.client-dashboard {
+	top: 56px;
+}
+
+.top-bar {
+	top: 56px;
 }
 
 .dashboard-title {
@@ -35,7 +47,6 @@
 	text-align: center;
 	font-weight: 600;
 	font-size: 1.6rem;
-	/*margin-top: 2.3rem;*/
 	color: var(--dark-blue);
 }
 
@@ -48,23 +59,27 @@
 .day {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
-	margin-left: 2.4rem;
-	padding: 0.4em 0;
+	margin-left: 2rem;
+	padding: 0.2em 0;
 	font-weight: bold;
-	font-size: 1.1rem;
-	/*transition: all 250ms;*/
+	font-size: 1rem;
 }
 
 .day:hover {
-	/*transform: scale(1.04);*/
-	/*color: #34495e;*/
-	/*border-color: #34495e;*/
+	transform: scale(1.04);
+	color: white;
+	border-color: #34495e;
+	background-color: whitesmoke;
 	cursor: pointer;
+}
+
+.day-item {
+	list-style-type: none;
 }
 
 .day p {
@@ -86,20 +101,11 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	top: 56px;
-	left: 0;
-	height: calc(100vh - 56px);
+	/*top: 56px;*/
+	/*left: 0;*/
 	width: 100%;
 	z-index: 5;
 	background-color: white;
-	/*cursor: pointer;*/
-}
-
-.time-picker-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .time {
@@ -119,55 +125,22 @@
 }
 
 .time:hover {
-/*transform: scale(1.04);*/
-/*color: #34495e;*/
-/*border-color: #34495e;*/
-cursor: pointer;
-}
-
-.time-picker-content {
-	text-align: center;
-	margin: 3rem 0;
-}
-
-.time-picker-content p {
-	color: var(--dark-grey);
-	margin-top: 1rem;
+	transform: scale(1.04);
+	color: white;
+	border-color: #34495e;
+	background-color: whitesmoke;
+	cursor: pointer;
 }
 
 .time-picker-container h1 {
 	margin-bottom: 0;
 }
 
-.time-picker-container h2 {
-	margin-top: -1rem;
-	margin-bottom: 1rem;
-}
-
-.time-picker-container p {
-	margin: 0;
-	padding: 0;
-}
 .time-text {
 	font-size: 2rem;
 	font-weight: 600;
 	color: var(--dark-blue);
 	margin: 0;
-}
-
-.time-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	margin-top: 3em;
-}
-
-.times-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: baseline;
-	align-items: center;
 }
 
 .back-btn {
@@ -184,10 +157,6 @@ cursor: pointer;
 	cursor: pointer;
 }
 
-.time-link {
-	text-decoration: none;
-	color: var(--dark-blue);
-}
 
 @media (max-width: 768px) {
 	.day-container {

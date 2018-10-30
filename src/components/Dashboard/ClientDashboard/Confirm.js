@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
+import './Confirm.css'
 
 class Confirm extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
-    console.log(this.props.time)
     return(
-      <div>
-        <h1>Thank you for confirming your interview</h1>
-        { this.props.day.day }
-        { this.props.day.date }
-        { this.props.time }
+      <div className={'confirmation-container'}>
+        <div className={"confirm-selected-time"}>
+          <p className={"confirm-day"}>{ this.props.day.day }</p>
+          <p className={"confirm-date"}>{ this.props.day.date }</p>
+          <p className={"confirm-time"}>{ this.props.time }</p>
+        </div>
+        <div className={'confirm-btns'}>
+          <button className={'confirm-btn btn-grey'} onClick={ this.props.backButton }>change</button>
+          <button className={'confirm-btn btn-blue'}>confirm</button>
+        </div>
       </div>
     )
   }
