@@ -157,42 +157,6 @@
 	cursor: pointer;
 }
 
-.confirmation-container {
-	margin: 2rem auto;
-	padding: 1.3rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 200px;
-	background-color: lightgray;
-	border: 0 solid white;
-	border-radius: 1rem;
-}
-
-.confirm-day {
-	margin: 0;
-	padding: 0;
-	font-size: 3rem;
-	font-weight: 600;
-}
-
-.confirm-date {
-	margin: 0;
-	padding: 0;
-	font-size: 2rem;
-	font-weight: 600;
-}
-
-.confirm-time {
-	margin: 0;
-	padding: 0;
-	font-size: 1rem;
-}
-
-.confirm-select {
-	margin-top: 4px;
-}
 
 @media (max-width: 768px) {
 	.day-container {
