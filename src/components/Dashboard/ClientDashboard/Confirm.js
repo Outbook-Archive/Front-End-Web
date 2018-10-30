@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 
 class Confirm extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     return(
-      <div>
-        <h1>Thank you for confirming your interview</h1>
-        { this.props.day.day }
-        { this.props.day.date }
-        { this.props.time }
+      <div className={"confirmation-container"}>
+        <p className={"confirm-day"}>{ this.props.day.day }</p>
+        <p className={"confirm-date"}>{ this.props.day.date }</p>
+        <p className={"confirm-time"}>{ this.props.time }</p>
+        <button className={'confirm-select'}>select</button>
       </div>
     )
   }

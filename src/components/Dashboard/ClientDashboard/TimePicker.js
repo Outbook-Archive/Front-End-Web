@@ -12,9 +12,10 @@ class TimePicker extends Component {
     });
 
     return (
-      <div>
-        {this.props.activeDay.day}
-        {this.props.activeDay.date}
+      <div className={"time-picker-container"}>
+        <div className={"time-picker-title"}><h1>Select a Time</h1></div>
+        <div className={"day-name"}>{this.props.activeDay.day}</div>
+        <div className={"day-date"}>{this.props.activeDay.date}</div>
         {times}
       </div>
     )
