@@ -17,6 +17,7 @@ class TimePicker extends Component {
         <div className={"day-name"}>{this.props.activeDay.day}</div>
         <div className={"day-date"}>{this.props.activeDay.date}</div>
         {times}
+        <button onClick={ this.props.backButton }>back</button>
       </div>
     )
   }

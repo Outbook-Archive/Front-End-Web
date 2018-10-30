@@ -16,13 +16,32 @@ class ClientDashboard extends Component {
     };
   }
 
+  backButton(view) {
+    switch (view) {
+      case 'toDayPicker':
+        this.setState({
+          activeView: 'dayPicker',
+          activeDay: null
+        });
+        break;
+      case 'toTimePicker':
+        this.setState({
+          activeView: 'timePicker',
+          activeTime: null
+        });
+        break;
+    }
+  }
+
   viewSelect() {
     switch (this.state.activeView) {
       case 'dayPicker':
         return (
           <div>
             <div className="dashboard-title">Select a Day</div>
-            <DayPicker clickedDay={ (day) => this.daySelect(day) }/>
+            <DayPicker
+              clickedDay={ (day) => this.daySelect(day)}
+            />
           </div>
         );
 
@@ -32,7 +51,8 @@ class ClientDashboard extends Component {
             <div className="dashboard-title">Select a Time</div>
             <TimePicker
               activeDay={ this.state.activeDay }
-              clickedTime={ (time) => this.timeSelect(time) }
+              clickedTime={ (time) => this.timeSelect(time)}
+              backButton={ () => this.backButton('toDayPicker')}
             />
           </div>
         );
@@ -41,7 +61,11 @@ class ClientDashboard extends Component {
         return (
           <div>
             <div className="dashboard-title">Please review your interview day and time</div>
-            <Confirm day={this.state.activeDay} time={this.state.activeTime} />
+            <Confirm
+              day={this.state.activeDay}
+              time={this.state.activeTime}
+              backButton={ () => this.backButton('toTimePicker')}
+            />
           </div>
         );
 
