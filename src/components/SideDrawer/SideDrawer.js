@@ -9,7 +9,7 @@ const sideDrawer = props => {
   }
   return (
     <nav className={drawerClasses}>
-      <h1>Outbook</h1>
+      <h1>OUTBOOK</h1>
       <ul>
         <Link to="/">
           <li>Home</li>
