@@ -1,0 +1,44 @@
+/*TimePicker.css*/
+
+.time-picker-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	z-index: 5;
+	background-color: white;
+}
+
+.time {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid var(--medium-blue);
+	border-radius: 5rem;
+	width: 10rem;
+	margin-bottom: 1.4rem;
+	padding: 0.4em 0;
+	color: var(--dark-grey);
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.time:hover {
+	transform: scale(1.04);
+	color: white;
+	border-color: #34495e;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+.time-picker-container h1 {
+	margin-bottom: 0;
+}
+
+.time-text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--dark-blue);
+	margin: 0;
+}

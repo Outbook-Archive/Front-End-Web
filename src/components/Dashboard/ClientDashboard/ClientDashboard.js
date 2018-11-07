@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import DayPicker from './DayPicker';
+import React, { Component } from 'react'
 
-import '../Dashboard.css';
-import TimePicker from "./TimePicker";
-import Confirm from "./Confirm";
+// COMPONENTS
+import DayPicker from './DayPicker'
+import TimePicker from './TimePicker'
+import Confirm from "./Confirm"
+
+// STYLES
+import './ClientDashboard.css'
 
 class ClientDashboard extends Component {
   constructor(props){
@@ -37,7 +40,7 @@ class ClientDashboard extends Component {
     switch (this.state.activeView) {
       case 'dayPicker':
         return (
-          <div>
+          <div className="daypicker-content">
             <div className="dashboard-title">Select a Day</div>
             <DayPicker
               clickedDay={ (day) => this.daySelect(day)}
@@ -47,7 +50,7 @@ class ClientDashboard extends Component {
 
       case 'timePicker':
         return (
-          <div>
+          <div className="timepicker-content">
             <div className="dashboard-title">Select a Time</div>
             <TimePicker
               activeDay={ this.state.activeDay }
@@ -59,7 +62,7 @@ class ClientDashboard extends Component {
 
       case 'confirmView':
         return (
-          <div>
+          <div className="confirm-view-content">
             <div className="dashboard-title">Please review your interview day and time</div>
             <Confirm
               day={this.state.activeDay}
@@ -97,10 +100,13 @@ class ClientDashboard extends Component {
 
 // Mini COMPONENT
 function Topbar(props) {
+  const now = new Date();
+
   return (
     <div className="top-bar">
       <div className="top-bar-item grey">15 minute Interview</div>
-      <div className="top-bar-item right-text blue">Pacific Time - US & Canada<br/>12:06am</div>
+      <div className="top-bar-item right-text blue">Pacific Time - US & Canada <br/></div>
+
     </div>
   )
 }

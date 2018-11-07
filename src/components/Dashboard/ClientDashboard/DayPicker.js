@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-
-// import { connect } from 'react-redux'
-// import * as actions from '../../../actions'
+import React, { Component } from 'react'
+import './DayPicker.css'
 
 const MockDays = [
   {
@@ -45,8 +43,36 @@ const MockDays = [
         booked: false
       },
     ]
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+    ]
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+    ]
   }
-  ];
+];
 
 
 class DayPicker extends Component {

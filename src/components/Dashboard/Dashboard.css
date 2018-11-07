@@ -4,16 +4,19 @@
 	--medium-blue: #2980b9;
 }
 
+.dashboard-container {
+  width: 100%;
+}
+
 .top-bar {
 	display: flex;
 	justify-content: space-between;
-	height: 50px;
-	width: 100%;
+  padding: 1rem;
 	margin-bottom: 2rem;
 }
 
 .top-bar-item {
-	padding: 2rem;
+
 	font-size: 1.3rem;
 }
 
@@ -50,99 +53,6 @@
 	color: var(--dark-blue);
 }
 
-.day-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 3em;
-}
-
-.day {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	border: 5px solid var(--medium-blue);
-	border-radius: 5rem;
-	width: 10rem;
-	margin-left: 2rem;
-	padding: 0.2em 0;
-	font-weight: bold;
-	font-size: 1rem;
-}
-
-.day:hover {
-	transform: scale(1.04);
-	color: white;
-	border-color: #34495e;
-	background-color: whitesmoke;
-	cursor: pointer;
-}
-
-.day-item {
-	list-style-type: none;
-}
-
-.day p {
-	margin: 0;
-	padding: 0;
-}
-
-.day-text {
-	font-size: 2rem;
-	font-weight: 600;
-	color: var(--dark-blue);
-}
-
-.day-date {
-	color: var(--dark-grey);
-}
-
-.time-picker-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/*top: 56px;*/
-	/*left: 0;*/
-	width: 100%;
-	z-index: 5;
-	background-color: white;
-}
-
-.time {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border: 5px solid var(--medium-blue);
-	border-radius: 5rem;
-	width: 10rem;
-	margin-bottom: 1.4rem;
-	padding: 0.4em 0;
-	color: var(--dark-grey);
-	font-weight: bold;
-	font-size: 1.1rem;
-	/*transition: all 250ms;*/
-}
-
-.time:hover {
-	transform: scale(1.04);
-	color: white;
-	border-color: #34495e;
-	background-color: whitesmoke;
-	cursor: pointer;
-}
-
-.time-picker-container h1 {
-	margin-bottom: 0;
-}
-
-.time-text {
-	font-size: 2rem;
-	font-weight: 600;
-	color: var(--dark-blue);
-	margin: 0;
-}
-
 .back-btn {
 	position: relative;
 	z-index: 100;
@@ -168,4 +78,15 @@
 	.day {
 		margin: 0.5rem;
 	}
+  .top-bar-item {
+    font-size: 1rem;
+  }
+  .dashboard-title {
+    font-size: 1.3rem;
+  }
+  .top-bar {
+    padding: 0.5rem;
+  	margin-bottom: 2rem;
+  }
+
 }
