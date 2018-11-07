@@ -69,3 +69,9 @@
 .back-btn-blue:hover {
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  .time-text {
+    font-size: 1.1rem;
+  }
+}

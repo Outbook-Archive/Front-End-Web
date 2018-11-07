@@ -68,7 +68,11 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
+  .top-bar {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 	.day-container {
 		display: flex;
 		flex-direction: column;
@@ -83,10 +87,7 @@
   }
   .dashboard-title {
     font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
   }
-  .top-bar {
-    padding: 0.5rem;
-  	margin-bottom: 2rem;
-  }
-
 }
