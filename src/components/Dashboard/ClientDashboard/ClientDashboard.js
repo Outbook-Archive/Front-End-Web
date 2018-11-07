@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 // COMPONENTS
 import DayPicker from './DayPicker'
 import TimePicker from './TimePicker'
-import Confirm from "./Confirm"
+import Confirm from './Confirm'
+import Weather from './Weather'
 
 // STYLES
 import './ClientDashboard.css'
@@ -64,6 +65,7 @@ class ClientDashboard extends Component {
         return (
           <div className="confirm-view-content">
             <div className="dashboard-title">Please review your interview day and time</div>
+            <Weather />
             <Confirm
               day={this.state.activeDay}
               time={this.state.activeTime}
