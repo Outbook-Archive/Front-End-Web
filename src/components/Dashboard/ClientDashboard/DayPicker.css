@@ -2,7 +2,7 @@
 
 .day-container {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	margin-top: 3em;
 }
 
@@ -14,7 +14,6 @@
 	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
-	margin-left: 2rem;
 	padding: 0.2em 0;
 	font-weight: bold;
 	font-size: 1rem;
