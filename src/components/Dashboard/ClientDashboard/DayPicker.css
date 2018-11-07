@@ -46,3 +46,21 @@
 .day-date {
 	color: var(--dark-grey);
 }
+
+@media (max-width: 500px) {
+  .day {
+    padding: 0.5rem;
+  }
+  .day-container {
+    margin-top: 0.5rem;
+  }
+  .dashboard-title {
+    padding-top: 0.75rem;
+  }
+  .day-text {
+    font-size: 5vw;
+  }
+  .day-date {
+    font-size: 3vw;
+  }
+}

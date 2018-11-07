@@ -43,6 +43,34 @@ const MockDays = [
         booked: false
       },
     ]
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+    ]
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+    ]
   }
 ];
 

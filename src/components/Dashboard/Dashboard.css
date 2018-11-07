@@ -4,6 +4,10 @@
 	--medium-blue: #2980b9;
 }
 
+.dashboard-container {
+  width: 100%;
+}
+
 .top-bar {
 	display: flex;
 	justify-content: space-between;
@@ -75,4 +79,10 @@
 	.day {
 		margin: 0.5rem;
 	}
+  .top-bar-item {
+    font-size: 1rem;
+  }
+  .dashboard-title {
+    font-size: 1.3rem;
+  }
 }
