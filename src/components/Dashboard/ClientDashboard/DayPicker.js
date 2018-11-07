@@ -14,6 +14,14 @@ const MockDays = [
         time: "12:00pm",
         booked: false
       },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      }
     ]
   },
   {
@@ -28,6 +36,14 @@ const MockDays = [
         time: "4:00pm",
         booked: false
       },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      }
     ]
   },
   {
@@ -42,6 +58,14 @@ const MockDays = [
         time: "2:15pm",
         booked: false
       },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      }
     ]
   },
   {
@@ -56,6 +80,14 @@ const MockDays = [
         time: "2:15pm",
         booked: false
       },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      }
     ]
   },
   {
@@ -70,6 +102,14 @@ const MockDays = [
         time: "2:15pm",
         booked: false
       },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      }
     ]
   }
 ];

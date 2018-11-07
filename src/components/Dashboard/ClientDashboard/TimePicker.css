@@ -9,6 +9,17 @@
 	background-color: white;
 }
 
+.day-name {
+  padding: 1rem 0 0.3rem 0;
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.day-date {
+  padding-bottom: 1.5rem;
+}
+
 .time {
 	display: flex;
 	flex-direction: column;
@@ -41,4 +52,20 @@
 	font-weight: 600;
 	color: var(--dark-blue);
 	margin: 0;
+}
+
+.back-btn-blue {
+  margin: .4rem;
+	padding: .75rem;
+	border: 0 solid white;
+	border-radius: 2rem;
+	background-color: var(--medium-blue);
+  color: white;
+	box-sizing: border-box;
+	width: calc(10rem + 8px);
+	font-size: 1rem;
+}
+
+.back-btn-blue:hover {
+  cursor: pointer;
 }
