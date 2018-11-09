@@ -22,7 +22,11 @@
 
 .time-container{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
 .time {
   text-align: center;
 	border: 5px solid var(--medium-blue);
