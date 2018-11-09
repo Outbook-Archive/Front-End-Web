@@ -8,12 +8,15 @@ class TimePicker extends Component {
     // Array of Day mini COMPONENTS
     let timesSize = this.props.activeDay.times.length;
     let maxSize;
+    console.log(timesSize % 5)
 
     switch(timesSize % 5){
+      case 4:
       case 0:
         maxSize = 5;
         break;
-      case 4:
+      case 3:
+      case 2:
         maxSize = 4;
         break;
       default:
@@ -22,20 +25,20 @@ class TimePicker extends Component {
     }
 
     const rowAmount = timesSize / maxSize;
-    let rows = new Array(Math.floor(rowAmount)).fill([])
+    let rows = new Array(Math.floor(rowAmount))
+    for(let i = 0; i < rowAmount; i++){
+      rows[i] = []
+    }
 
-    const times = this.props.activeDay.times.map((timeData, index) => {
-      return <Time time={timeData} clickedTime={() => this.props.clickedTime(timeData.time)}/>
+    this.props.activeDay.times.forEach((timeData, index) => {
+      const timeObject = <Time time={timeData} clickedTime={() => this.props.clickedTime(timeData.time)}/>
+      const row = Math.floor(index/maxSize)
+      rows[row].push(timeObject)
     })
 
-    console.log(maxSize, timesSize)
-    times.forEach((item, index) => {
-      console.log(index / maxSize)
-      rows[Math.floor(index / maxSize)].push(item)
+    const times = rows.map((row) => {
+      return <div className="time-container-row">{row}</div>
     })
-
-    console.log(times)
-
 
 
     return (

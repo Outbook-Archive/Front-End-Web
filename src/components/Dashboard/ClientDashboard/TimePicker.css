@@ -27,12 +27,18 @@
   justify-content: space-around;
 }
 
+.time-container-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .time {
   text-align: center;
 	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
-	margin-bottom: 1.4rem;
+	margin: .7rem;
 	padding: 0.4em 0;
 	color: var(--dark-grey);
 	font-weight: bold;
