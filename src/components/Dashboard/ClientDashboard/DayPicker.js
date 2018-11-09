@@ -109,6 +109,22 @@ const MockDays = [
       {
         time: "12:00pm",
         booked: false
+      },
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
       }
     ]
   }

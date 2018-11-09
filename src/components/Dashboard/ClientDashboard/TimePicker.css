@@ -20,11 +20,11 @@
   padding-bottom: 1.5rem;
 }
 
+.time-container{
+  display: flex;
+}
 .time {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  text-align: center;
 	border: 5px solid var(--medium-blue);
 	border-radius: 5rem;
 	width: 10rem;
