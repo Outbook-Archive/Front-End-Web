@@ -35,16 +35,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/*.overlay {*/
-	/*position: absolute;*/
-	/*top: 0;*/
-	/*left: 0;*/
-	/*display: none;*/
-	/*background: rgba(black, 0.8);*/
-	/*width: 100%;*/
-	/*height: 100%;*/
-/*}*/
-
 .login-container {
 	padding: 3rem;
 	margin-top: 56px;
@@ -57,21 +47,38 @@ body {
 	align-items: center;
 }
 
-form {
+.form-container {
+	background-color: white;
+	border: 0px solid white;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px grey;
+}
+
+.form-header {
 	z-index: 15;
 	position: relative;
 	background: white;
 	width: var(--max-width);
 	padding: 1.5rem;
 	border-radius: 4px;
-	/*box-shadow: 1px 3rem 30px var(--dark-blue);*/
 	box-sizing: border-box;
 	margin: 5rem auto 10px;
 	overflow: hidden;
-
 }
 
-form:before form:after {
+.form-content {
+	z-index: 15;
+	position: relative;
+	background: white;
+	width: var(--max-width);
+	padding: 1.5rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin: 5rem auto 10px;
+	overflow: hidden;
+}
+
+.form-content:before .form-content:after {
 	 content: '';
 	 display: block;
 	 position: absolute;
@@ -82,19 +89,6 @@ form:before form:after {
 	 background: var(--accent-blue);
 	 transform: translate(-50%, -50%);
 }
-
-form:before {
-	 transform: translate(-50%, -50%) rotate(45deg);
-}
-
-form:after {
-	 transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/*form:visible {*/
-	 /*transform: translate(0, -25%) scale(1);*/
-	 /*opacity: 1;*/
-/*}*/
 
 form-group {
 	display: flex;
@@ -152,7 +146,7 @@ input:focus {
 	 color: var(--dark-gray);
 }
 
-a {
+.forgot {
 	color: var(--medium-blue);
 	text-decoration: none;
 }
@@ -161,22 +155,6 @@ a {
 	display: flex;
 	justify-content: space-between;
 	padding: 0 3px;
-}
-
-button {
-	outline: none;
-	background: var(--medium-blue);
-	width: 100%;
-	border: 0;
-	border-radius: 4px;
-	padding: 12px 20px;
-	color: white;
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: 500;
-	line-height: inherit;
-	text-transform: uppercase;
-	cursor: pointer;
 }
 
 .form-remember {
@@ -190,17 +168,26 @@ button {
 	line-height: 18px;
 }
 
-input[type='checkbox'] {
+.remember-checkbox {
 	display: inline-block;
 	width: auto;
-	margin-left: 5px;
+	margin-right: 7px;
 }
 
-
-form-recovery {
-	color: $accent;
-	font-size: 12px;
-	text-decoration: none;
+.btn-submit {
+	outline: none;
+	background: var(--medium-blue);
+	width: 100%;
+	border: 0;
+	border-radius: 4px;
+	padding: 12px 20px;
+	color: white;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 
