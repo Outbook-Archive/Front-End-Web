@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar/Navbar'
 import SideDrawer from '../components/SideDrawer/SideDrawer'
 import Backdrop from '../components/Backdrop/Backdrop'
 
+import Login from './Login/Login'
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 import Confirm from './Dashboard/ClientDashboard/Confirm'
@@ -42,11 +43,12 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <Route exact path='/' component={Login} />
           <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
-            <Route exact path='/' component={Landing}/>
+            <Route exact path='/landing' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
           </div>

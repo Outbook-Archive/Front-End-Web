@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import DayPicker from './DayPicker'
 import TimePicker from './TimePicker'
 import Confirm from './Confirm'
-import Weather from './Weather'
 
 // STYLES
 import './ClientDashboard.css'
@@ -33,6 +32,8 @@ class ClientDashboard extends Component {
           activeView: 'timePicker',
           activeTime: null
         });
+        break;
+      default:
         break;
     }
   }
@@ -65,7 +66,6 @@ class ClientDashboard extends Component {
         return (
           <div className="confirm-view-content">
             <div className="dashboard-title">Please review your interview day and time</div>
-            <Weather />
             <Confirm
               day={this.state.activeDay}
               time={this.state.activeTime}
@@ -102,7 +102,7 @@ class ClientDashboard extends Component {
 
 // Mini COMPONENT
 function Topbar(props) {
-  const now = new Date();
+  // const now = new Date();
 
   return (
     <div className="top-bar">
