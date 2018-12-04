@@ -1,0 +1,87 @@
+/*TimePicker.css*/
+
+.time-picker-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	z-index: 5;
+	background-color: white;
+}
+
+.day-name {
+  padding: 1rem 0 0.3rem 0;
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.day-date {
+  padding-bottom: 1.5rem;
+}
+
+.time-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.time-container-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.time {
+  text-align: center;
+	border: 5px solid var(--medium-blue);
+	border-radius: 5rem;
+	width: 10rem;
+	margin: .7rem;
+	padding: 0.4em 0;
+	color: var(--dark-grey);
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.time:hover {
+	transform: scale(1.04);
+	color: white;
+	border-color: #34495e;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+.time-picker-container h1 {
+	margin-bottom: 0;
+}
+
+.time-text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--dark-blue);
+	margin: 0;
+}
+
+.back-btn-blue {
+  margin: .4rem;
+	padding: .75rem;
+	border: 0 solid white;
+	border-radius: 2rem;
+	background-color: var(--medium-blue);
+  color: white;
+	box-sizing: border-box;
+	width: calc(10rem + 8px);
+	font-size: 1rem;
+}
+
+.back-btn-blue:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .time-text {
+    font-size: 1.1rem;
+  }
+}

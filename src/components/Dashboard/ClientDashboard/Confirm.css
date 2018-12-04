@@ -1,0 +1,68 @@
+
+.confirm-selected-time {
+	margin: 2rem auto .4rem auto  ;
+	padding: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	/*
+		Border Box makes it exactly the width, regardless of padding and content size
+		DEFAULT: Content Box starts with the given with, THEN adds the padding and content size.
+	*/
+	box-sizing: border-box;
+	background-color: white;
+	border: 3px solid var(--medium-blue);
+	border-radius: 1rem;
+	color: var(--dark-blue);
+}
+
+.confirm-day {
+	margin: 0;
+	padding: 0;
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+.confirm-date {
+	margin: 0;
+	padding: 0;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.confirm-time {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.confirm-btns {
+	display: flex;
+	justify-content: center;
+}
+
+.confirm-btn {
+	margin: .4rem;
+	padding: .75rem;
+	border: 0 solid white;
+	border-radius: 5px;
+	background-color: red;
+	box-sizing: border-box;
+	width: calc(150px - .4rem);
+	font-size: 1rem;
+}
+
+.confirm-btn.btn-blue {
+	background-color: var(--medium-blue);
+	color: white;
+}
+
+.confirm-btn.btn-grey {
+	background-color: var(--dark-grey);
+	color: white;
+}
+
+
+

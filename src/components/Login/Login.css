@@ -1,0 +1,58 @@
+/* Login.css */
+
+.form-container {
+	width: 45vw;
+	height: 100%;
+	padding: 4rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border: 0px solid white;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px grey;
+}
+
+.login-container {
+	padding: 3rem;
+	margin-top: 56px;
+	/* Form Settings */
+	max-width: var(--max-width);
+	min-width: 500px;
+	max-height: 400px;
+	gutters: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-title {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.btn-submit {
+	outline: none;
+	background: var(--medium-blue);
+	width: 100%;
+	border: 0;
+	border-radius: 4px;
+	padding: 12px 20px;
+	color: white;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
+
+}
+
+.btn-link {
+	text-decoration: none;
+	color: white;
+}
+
+
+

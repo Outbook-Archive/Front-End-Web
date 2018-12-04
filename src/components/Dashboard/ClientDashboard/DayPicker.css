@@ -1,0 +1,65 @@
+/*DayPicker.css*/
+
+.day-container {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 3em;
+}
+
+.day {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: 5px solid var(--medium-blue);
+	border-radius: 5rem;
+	width: 10rem;
+	padding: 0.2em 0;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.day:hover {
+	transform: scale(1.04);
+	color: white;
+	border-color: #34495e;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+.day-item {
+	list-style-type: none;
+}
+
+.day p {
+	margin: 0;
+	padding: 0;
+}
+
+.day-text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--dark-blue);
+}
+
+.day-date {
+	color: var(--dark-grey);
+}
+
+@media (max-width: 500px) {
+  .day {
+    padding: 0.5rem;
+  }
+  .day-container {
+    margin-top: 0.5rem;
+  }
+  .dashboard-title {
+    padding-top: 0.75rem;
+  }
+  .day-text {
+    font-size: 5vw;
+  }
+  .day-date {
+    font-size: 3vw;
+  }
+}
