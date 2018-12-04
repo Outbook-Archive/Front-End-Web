@@ -7,7 +7,7 @@ class Login extends Component {
 
     fetch('http://outbook-us.herokuapp.com/')
       .then(res => {
-	      return res.json();
+        return res.json();
       })
       .then( data => {
         this.setState({ auth: data.signInUrl });
