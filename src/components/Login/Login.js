@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import './Login.css'
 
 class Login extends Component {
-  componentWillMount(){
+  constructor(props) {
+    super(props);
     this.state = { auth: null };
-
+  }
+  
+  componentWillMount(){
+    
     fetch('http://outbook-us.herokuapp.com/')
       .then(res => {
         return res.json();
