@@ -14,8 +14,8 @@ const navbar = props => (
       <div className="spacer"/>
       <div className="navbar-navigation-items">
         <ul>
-	        <Link to="/landing">
-		        <li>Home</li>
+	        <Link to="/login">
+		        <li>Login</li>
 	        </Link>
 	        <Link to="/dashboard">
 		        <li>Dashboard</li>

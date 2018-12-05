@@ -46,7 +46,7 @@ class App extends Component {
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
-            <Route exact path='/landing' component={Landing} />
+            <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
           </div>
