@@ -29,8 +29,9 @@
 
 .time-container-row{
   display: flex;
+  width: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .time {

@@ -34,14 +34,17 @@ class TimePicker extends Component {
 
     // Set up rows
     this.props.activeDay.times.forEach((timeData, index) => {
-      const timeObject = <Time time={timeData} clickedTime={() => this.props.clickedTime(timeData.time)}/>
+      const timeObject = <Time
+        key={`timeObj-${index}`}
+        time={timeData}
+        clickedTime={() => this.props.clickedTime(timeData.time)}/>
       const row = Math.floor(index/maxSize)
       rows[row].push(timeObject)
     })
 
     // Mapping time to rows
-    const times = rows.map((row) => {
-      return <div className="time-container-row">{row}</div>
+    const times = rows.map((row, index) => {
+      return <div key={`row-${index}`} className="time-container-row">{row}</div>
     })
 
 
