@@ -52,7 +52,6 @@ class App extends Component {
             <Route path='/confirm' component={Confirm} />
             <Route path='/complete' component={Complete}/>
             <Route path='/candidateLink' component={CandidateLink} />
-            <Route path='/complete' component={Complete}/>
           </div>
         </div>
       </BrowserRouter>
