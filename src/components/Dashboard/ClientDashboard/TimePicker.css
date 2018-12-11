@@ -22,8 +22,14 @@
 
 .time-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.time-container-row{
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -56,11 +62,6 @@
 	font-weight: 600;
 	color: var(--dark-blue);
 	margin: 0;
-}
-
-.time-text.connector{
-  font-size: 1rem;
-  font-weight: 300;
 }
 
 .back-btn-blue {

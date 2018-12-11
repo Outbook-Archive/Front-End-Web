@@ -15,16 +15,16 @@
 }
 
 .login-container {
-	padding-top: calc(56px + 5rem);
-	/*max-width: var(--max-width);*/
+	padding: 3rem;
+	margin-top: 56px;
+	/* Form Settings */
+	max-width: var(--max-width);
 	min-width: 500px;
+	max-height: 400px;
+	gutters: 24px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*FIXME: change to gradient*/
-	background-color: white;
-	padding-bottom: 100%;
-	height: 100%;
 }
 
 .form-title {
