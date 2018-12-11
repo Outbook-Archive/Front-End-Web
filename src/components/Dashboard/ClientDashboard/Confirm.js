@@ -4,6 +4,7 @@ import './Confirm.css'
 class Confirm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       name: null,
       email: null,
@@ -64,15 +65,18 @@ class Confirm extends Component {
 
 
   render() {
+    console.log(this.props)
     return(
-      <div className={'confirmation-container'}>
-        <div className={"confirm-selected-time"}>
-          <p className={"confirm-day"}>{ this.props.day.day }</p>
-          <p className={"confirm-date"}>{ this.props.day.date }</p>
-          <p className={"confirm-time"}>{ this.props.time }</p>
+      <div className='confirmation-container'>
+        <div className="confirm-selected-time">
+          <p className="confirm-day">{ this.props.day.day }</p>
+          <p className="confirm-date">{ this.props.day.date }</p>
+          <p className="confirm-time">
+            {`${this.props.time.format.start} to ${this.props.time.format.end}`}
+          </p>
+
         </div>
 
-        {/* <div className="confirm-form"> */}
         <EmailForm  name={this.handleNameChange}
                     email={this.handleEmailChange}
                     phone={this.handlePhoneChange}

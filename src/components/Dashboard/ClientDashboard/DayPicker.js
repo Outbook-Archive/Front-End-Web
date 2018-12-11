@@ -9,27 +9,33 @@ class DayPicker extends Component {
     let days = []
 
     events.forEach(function(event){
-      const day = new Date(event.start.dateTime)
-      const weekday = day.getDay()
+      const startTime = new Date(event.start.dateTime);
+      const endTime = new Date(event.end.dateTime);
+      const startFormat = getTime(startTime);
+      const endFormat = getTime(endTime);
+
+      const weekday = startTime.getDay()
       const weekdayName = weekdayNames[weekday]
-      const display = `${day.getMonth()}-${day.getDate()}-${day.getFullYear()}`
+      const longDisplay = `${startTime.getMonth()}-${startTime.getDate()}-${startTime.getFullYear()}`
+
+
       if(days.includes(weekday) === false){
         days[weekday] = {
           day: weekdayName,
-          date: display,
-          times: [{event}]
+          date: longDisplay,
+          times: [{event, format: {start: startFormat, end: endFormat}}]
         }
       }
       else{
-        days[weekday].times.push({event})
+        days[weekday].times.push({event, format: {start: startFormat, end: endFormat}})
       }
     })
+
     this.days = days;
   }
 
   render() {
     // Array of Day mini COMPONENTS
-    console.log(this.days)
     const daysDisplay = this.days.map((dayData, index) => {
       return (
         <li key={index} className={"day-item"}>
@@ -53,5 +59,14 @@ function Day(props) {
     </div>
   )
 }
+
+// Getting time
+function getTime(date){
+  const hour = date.getHours()
+  const min = String(date.getMinutes()).padStart(2, '0')
+
+  return `${hour}:${min}`
+}
+
 
 export default DayPicker;
