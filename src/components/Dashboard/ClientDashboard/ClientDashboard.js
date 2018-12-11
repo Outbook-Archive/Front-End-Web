@@ -13,10 +13,20 @@ class ClientDashboard extends Component {
     super(props);
 
     this.state = {
+      calendarData: null,
       activeView: 'dayPicker',
       activeDay: null,
       activeTime: null
     };
+  }
+
+  componentWillMount(){
+    const url = 'https://outbook-us.herokuapp.com/calendar/interviewer/5c0f013d6b3803001697e993'
+    fetch(url).then(data => {
+      return data.json()
+    }).then(json => {
+      this.setState({ calendarData: json })
+    })
   }
 
   backButton(view) {
@@ -46,6 +56,7 @@ class ClientDashboard extends Component {
             <div className="dashboard-title">Select a Day</div>
             <DayPicker
               clickedDay={ (day) => this.daySelect(day)}
+              data={this.state.calendarData}
             />
           </div>
         );
@@ -94,7 +105,7 @@ class ClientDashboard extends Component {
     return (
       <div className={"client-dashboard"}>
         <Topbar />
-        {view}
+        {this.state.calendarData ? view : <Loading/>}
       </div>
     )
   }
@@ -108,8 +119,13 @@ function Topbar(props) {
     <div className="top-bar">
       <div className="top-bar-item grey">15 minute Interview</div>
       <div className="top-bar-item right-text blue">Pacific Time - US & Canada <br/></div>
-
     </div>
+  )
+}
+
+function Loading(props){
+  return (
+    <div>Loading data</div>
   )
 }
 
