@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import Navbar from '../components/Navbar/Navbar'
@@ -10,7 +9,7 @@ import Login from './Login/Login'
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 import Confirm from './Dashboard/ClientDashboard/Confirm'
-
+import Complete from './Complete/Complete'
 
 import './App.css'
 
@@ -47,9 +46,9 @@ class App extends Component {
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
-            <Route exact path='/landing' component={Landing} />
+            <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard}/>
-            <Route path='/confirm' component={Confirm} />
+            <Route path='/complete' component={Complete}/>
           </div>
         </div>
       </BrowserRouter>
