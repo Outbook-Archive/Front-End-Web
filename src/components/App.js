@@ -9,12 +9,8 @@ import Login from './Login/Login'
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 import Confirm from './Dashboard/ClientDashboard/Confirm'
-<<<<<<< Updated upstream
-
-=======
 import Complete from './Complete/Complete'
 import CandidateLink from './CandidateLink/CandidateLink'
->>>>>>> Stashed changes
 
 import './App.css'
 

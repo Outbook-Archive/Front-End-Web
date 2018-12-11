@@ -1,7 +1,7 @@
 import React from 'react';
 import './CandidateLink.css';
 
-CandidateLink = () => {
+function CandidateLink() {
   return (
     <div className='link-container'>
       <input placeholder="984rkjnkjfnf98qhgkqerf"></input>
