@@ -11,7 +11,7 @@ class Login extends Component {
 
   componentWillMount(){
 
-    fetch('http://outbook-us.herokuapp.com/')
+    fetch('https://outbook-us.herokuapp.com/')
       .then(res => {
         return res.json();
       })

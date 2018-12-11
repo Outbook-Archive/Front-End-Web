@@ -97,7 +97,7 @@ function EmailForm (props) {
   return (
     <form className="confirm-form"
           method="POST"
-          action="http://outbook-us.herokuapp.com/calendar/interviewer/5c0f445cd30a700016777112"
+          action="https://outbook-us.herokuapp.com/calendar/interviewer/5c0f445cd30a700016777112"
           target="_blank">
       <h1>Enter Your Information</h1>
 
