@@ -173,6 +173,29 @@ const MockDays = [
 
 
 class DayPicker extends Component {
+  componentWillMount(){
+    const events = this.props.calendarData.events
+    const weekdayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+    let days = []
+
+    events.forEach(function(event){
+      const day = new Date(event.start.dateTime)
+      const weekday = weekdayNames[day.getDay()]
+      const display = `${day.getMonth()}-${day.getDate()}-${day.getFullYear()}`
+
+      if(days.includes(weekday) === false){
+        days[weekday] = {
+          day: weekday,
+          date: display,
+          times: [{event}]
+        }
+      }
+      else{
+        days[weekday].times.push({event})
+      }
+    })
+  }
 
   render() {
     // Array of Day mini COMPONENTS

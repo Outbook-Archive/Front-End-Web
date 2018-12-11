@@ -56,7 +56,7 @@ class ClientDashboard extends Component {
             <div className="dashboard-title">Select a Day</div>
             <DayPicker
               clickedDay={ (day) => this.daySelect(day)}
-              data={this.state.calendarData}
+              calendarData={this.state.calendarData}
             />
           </div>
         );
