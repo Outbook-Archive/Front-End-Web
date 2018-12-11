@@ -1,51 +1,191 @@
 import React, { Component } from 'react'
 import './DayPicker.css'
 
-class DayPicker extends Component {
-  componentWillMount(){
-    const events = this.props.calendarData.events
-    const weekdayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-
-    let days = []
-
-    events.forEach(function(event){
-      const startTime = new Date(event.start.dateTime);
-      const endTime = new Date(event.end.dateTime);
-      const startFormat = getTime(startTime);
-      const endFormat = getTime(endTime);
-
-      const weekday = startTime.getDay()
-      const weekdayName = weekdayNames[weekday]
-      const longDisplay = `${startTime.getMonth()}-${startTime.getDate()}-${startTime.getFullYear()}`
-
-
-      if(days.includes(weekday) === false){
-        days[weekday] = {
-          day: weekdayName,
-          date: longDisplay,
-          times: [{event, format: {start: startFormat, end: endFormat}}]
-        }
+const MockDays = [
+  {
+    day : "Mon",
+    date: "10-22-18",
+    times: [
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
       }
-      else{
-        days[weekday].times.push({event, format: {start: startFormat, end: endFormat}})
-      }
-    })
+    ]
+  },
+  {
+    day : "Tues",
+    date: "10-23-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "10:15am",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      },
+      {
+        time: "1:00pm",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
 
-    this.days = days;
+    ]
+  },
+  {
+    day : "Wed",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "10:15am",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      },
+      {
+        time: "1:00pm",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+      {
+      time: "2:30pm",
+      booked: false
+      },
+    ]
+  },
+  {
+    day : "Thurs",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "10:15am",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      },
+      {
+        time: "1:00pm",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+      {
+      time: "2:30pm",
+      booked: false
+      },
+      {
+        time: "3:00pm",
+        booked: false
+      },
+    ]
+  },
+  {
+    day : "Fri",
+    date: "10-24-18",
+    times: [
+      {
+        time: "9:00am",
+        booked: false
+      },
+      {
+        time: "10:15am",
+        booked: false
+      },
+      {
+      time: "11:00am",
+      booked: false
+      },
+      {
+        time: "12:00pm",
+        booked: false
+      },
+      {
+        time: "1:00pm",
+        booked: false
+      },
+      {
+        time: "2:15pm",
+        booked: false
+      },
+      {
+      time: "2:30pm",
+      booked: false
+      },
+      {
+        time: "3:00pm",
+        booked: false
+      },
+      {
+        time: "4:30pm",
+        booked: false
+      },
+    ]
   }
+];
+
+
+class DayPicker extends Component {
 
   render() {
     // Array of Day mini COMPONENTS
-    const daysDisplay = this.days.map((dayData, index) => {
+    const days = MockDays.map((dayData, index) => {
       return (
         <li key={index} className={"day-item"}>
-          <Day data={dayData} click={() => this.props.clickedDay(dayData)}/>
+          <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
         </li>
       )
     });
 
     return (
-      <div className={"day-container"}>{daysDisplay}</div>
+      <div className={"day-container"}>{days}</div>
     )
   }
 }
@@ -53,20 +193,11 @@ class DayPicker extends Component {
 // Mini COMPONENT
 function Day(props) {
   return (
-    <div onClick={props.click} className="day">
-      <p className="day-text">{props.data.day}</p>
-      <p className="day-date">{props.data.date}</p>
+    <div onClick={props.clickedDay} className="day">
+      <p className="day-text">{props.day.day}</p>
+      <p className="day-date">{props.day.date}</p>
     </div>
   )
 }
-
-// Getting time
-function getTime(date){
-  const hour = date.getHours()
-  const min = String(date.getMinutes()).padStart(2, '0')
-
-  return `${hour}:${min}`
-}
-
 
 export default DayPicker;
