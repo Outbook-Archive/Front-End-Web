@@ -2,30 +2,36 @@ import React, { Component } from 'react'
 import './Login.css'
 
 class Login extends Component {
-	componentWillMount(){
+  constructor(props) {
+    super(props);
     this.state = { auth: null };
+  }
 
-    fetch('http://outbook-us.herokuapp.com/').then(res =>{
-			return res.json();
-		}).then(data => {
-			this.setState({ auth: data.signInUrl });
-		});
-	}
+  componentWillMount(){
 
-	render() {
-		return (
-			<div className='login-container'>
-				<div className='form-container'>
+    fetch('http://outbook-us.herokuapp.com/')
+      .then(res => {
+        return res.json();
+      })
+      .then( data => {
+        this.setState({ auth: data.signInUrl });
+      });
+  }
 
-					<h1 className='form-title'>Login with Microsoft account</h1>
-					<button className='btn-submit' type="submit">
-						<a className='btn-link' href={this.state.auth} >Sign in to Outlook</a>
-					</button>
+  render() {
+    return (
+	<div className='login-container'>
+	  <div className='form-container'>
 
-				</div>
-			</div>
-		)
-	}
+	    <h1 className='form-title'>Login with Microsoft account</h1>
+	    <button className='btn-submit' type="submit">
+	      <a className='btn-link' href={this.state.auth} >Sign in to Outlook</a>
+	    </button>
+
+	  </div>
+	</div>
+    )
+  }
 }
 
 export default Login;
