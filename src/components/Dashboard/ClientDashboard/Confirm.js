@@ -81,7 +81,10 @@ class Confirm extends Component {
                     email={this.handleEmailChange}
                     phone={this.handlePhoneChange}
                     backBtn={this.props.backButton}
-                    handleFrmData={this.handleFrmData} />
+                    handleFrmData={this.handleFrmData}
+                    id={this.props.time.event.id}
+                    utc={this.props.time.event.start.dateTime}
+        />
       </div>
     )
   }
@@ -101,7 +104,7 @@ function EmailForm (props) {
       <div className="form-items">
         <div className={"form-name"}>
           <p className="form-title">Full Name *</p>
-          <input className={"form-input"} placeholder="Jane Smith" name="name" type="text" onChange={props.name}></input>
+          <input className={"form-input"} placeholder="Jane Smith" name="fullName" type="text" onChange={props.name}></input>
         </div>
         <div className="form-email">
           <p className="form-title">Your email address *</p>
@@ -109,7 +112,7 @@ function EmailForm (props) {
         </div>
         <div className="form-phone">
           <p className="form-title">Your phone number *</p>
-          <input className={"form-input"} placeholder="5555555555" name="phone" onChange={props.phone}></input>
+          <input className={"form-input"} placeholder="5555555555" name="phoneNumber" onChange={props.phone}></input>
         </div>
       </div>
       <div className={"confirm-btns"}>
@@ -119,7 +122,9 @@ function EmailForm (props) {
           confirm
         </button>
       </div>
-      <input type="hidden" value=""></input> {/* update value with unixTimeStamp for date data */}
+      <input type="hidden" name="eventId" value={props.id}></input>
+      <input type="hidden" name="startDateTime" value={props.utc}></input>
+
     </form>
   )
 }
