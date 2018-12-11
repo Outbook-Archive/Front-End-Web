@@ -4,6 +4,7 @@ import './Confirm.css'
 class Confirm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       name: null,
       email: null,
@@ -28,17 +29,17 @@ class Confirm extends Component {
   }
 
   handleNameChange(e) {
-    // console.log(e.target.value)
+    console.log(e.target.value)
     this.setState({name: e.target.value})
   }
 
   handleEmailChange(e) {
-    // console.log(e.target.value)
+    console.log(e.target.value)
     this.setState({email: e.target.value})
   }
 
   handlePhoneChange(e) {
-    // console.log(e.target.value)
+    console.log(e.target.value)
     this.setState({phone: e.target.value})
   }
 
@@ -60,46 +61,70 @@ class Confirm extends Component {
     } else if ((this.state.phone).length != 10) {
       alert("Enter a valid number")
     }
-
-    // Axios send back to the API
-    // TODO: James please TODO this part
   }
 
 
   render() {
+    console.log(this.props)
     return(
-      <div className={'confirmation-container'}>
-        <div className={"confirm-selected-time"}>
-          <p className={"confirm-day"}>{ this.props.day.day }</p>
-          <p className={"confirm-date"}>{ this.props.day.date }</p>
-          <p className={"confirm-time"}>{ this.props.time }</p>
+      <div className='confirmation-container'>
+        <div className="confirm-selected-time">
+          <p className="confirm-day">{ this.props.day.day }</p>
+          <p className="confirm-date">{ this.props.day.date }</p>
+          <p className="confirm-time">
+            {`${this.props.time.format.start} to ${this.props.time.format.end}`}
+          </p>
+
         </div>
 
-        <div className="confirm-form">
-          <h1>Enter Your Information</h1>
-            <div className="form-items">
-              <div className={"form-name"}>
-                <p className="form-title">Full Name *</p>
-                <input className={"form-input"} placeholder="Jane Smith" name="_name" type="text" onChange={this.handleNameChange}></input>
-              </div>
-              <div className="form-email">
-                <p className="form-title">Your email address *</p>
-                <input className={"form-input"} placeholder="email@gmail.com" name="email" type="email" onChange={this.handleEmailChange}></input>
-              </div>
-              <div className="form-phone">
-                <p className="form-title">Your phone number *</p>
-                <input className={"form-input"} placeholder="5555555555" name="phone" onChange={this.handlePhoneChange}></input>
-              </div>
-            </div>
-          </div>
-
-        <div className={'confirm-btns'}>
-          <button className={'confirm-btn btn-grey'} onClick={ this.props.backButton }>change</button>
-          <button className={'confirm-btn btn-blue'} onClick={ this.handleFormData }>confirm</button>
-        </div>
+        <EmailForm  name={this.handleNameChange}
+                    email={this.handleEmailChange}
+                    phone={this.handlePhoneChange}
+                    backBtn={this.props.backButton}
+                    handleFrmData={this.handleFrmData}
+                    id={this.props.time.event.id}
+                    utc={this.props.time.event.start.dateTime}
+        />
       </div>
     )
   }
 }
 
 export default Confirm;
+
+
+function EmailForm (props) {
+  return (
+    <form className="confirm-form"
+          method="POST"
+          action="https://outbook-us.herokuapp.com/calendar/interviewer/5c0f2512a86da2001650b964"
+          target="_blank">
+      <h1>Enter Your Information</h1>
+
+      <div className="form-items">
+        <div className={"form-name"}>
+          <p className="form-title">Full Name *</p>
+          <input className={"form-input"} placeholder="Jane Smith" name="fullName" type="text" onChange={props.name}></input>
+        </div>
+        <div className="form-email">
+          <p className="form-title">Your email address *</p>
+          <input className={"form-input"} placeholder="email@gmail.com" name="email" type="email" onChange={props.email}></input>
+        </div>
+        <div className="form-phone">
+          <p className="form-title">Your phone number *</p>
+          <input className={"form-input"} placeholder="5555555555" name="phoneNumber" onChange={props.phone}></input>
+        </div>
+      </div>
+      <div className={"confirm-btns"}>
+        <button className={"confirm-btn btn-grey"} onClick={ props.backBtn }>change</button>
+        <button className={"confirm-btn btn-blue"}
+                onClick={ props.handleFrmData }>
+          confirm
+        </button>
+      </div>
+      <input type="hidden" name="eventId" value={props.id}></input>
+      <input type="hidden" name="startDateTime" value={props.utc}></input>
+
+    </form>
+  )
+}

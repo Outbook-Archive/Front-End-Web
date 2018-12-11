@@ -22,16 +22,9 @@
 
 .time-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.time-container-row{
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .time {
