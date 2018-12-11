@@ -30,9 +30,6 @@ function Time(props) {
   return (
     <div onClick={props.clickedTime} className="time">
       <p className="time-text">{ props.time.start }</p>
-      <p className="time-text connector">to</p>
-      <p className="time-text">{ props.time.end }</p>
-
     </div>
   )
 }
