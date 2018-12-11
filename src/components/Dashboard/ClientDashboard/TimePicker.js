@@ -5,9 +5,8 @@ import './TimePicker.css'
 class TimePicker extends Component {
 
   render() {
-    console.log(this.props, "=======================")
-
     // Set up columns
+    console.log(this.props.activeDay)
     const times = this.props.activeDay.times.map((timeData, index) => {
       return <Time
         key={`timeObj-${index}`}

@@ -1,177 +1,6 @@
 import React, { Component } from 'react'
 import './DayPicker.css'
 
-const MockDays = [
-  {
-    day : "Mon",
-    date: "10-22-18",
-    times: [
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      },
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      }
-    ]
-  },
-  {
-    day : "Tues",
-    date: "10-23-18",
-    times: [
-      {
-        time: "9:00am",
-        booked: false
-      },
-      {
-        time: "10:15am",
-        booked: false
-      },
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      },
-      {
-        time: "1:00pm",
-        booked: false
-      },
-      {
-        time: "2:15pm",
-        booked: false
-      },
-
-    ]
-  },
-  {
-    day : "Wed",
-    date: "10-24-18",
-    times: [
-      {
-        time: "9:00am",
-        booked: false
-      },
-      {
-        time: "10:15am",
-        booked: false
-      },
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      },
-      {
-        time: "1:00pm",
-        booked: false
-      },
-      {
-        time: "2:15pm",
-        booked: false
-      },
-      {
-      time: "2:30pm",
-      booked: false
-      },
-    ]
-  },
-  {
-    day : "Thurs",
-    date: "10-24-18",
-    times: [
-      {
-        time: "9:00am",
-        booked: false
-      },
-      {
-        time: "10:15am",
-        booked: false
-      },
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      },
-      {
-        time: "1:00pm",
-        booked: false
-      },
-      {
-        time: "2:15pm",
-        booked: false
-      },
-      {
-      time: "2:30pm",
-      booked: false
-      },
-      {
-        time: "3:00pm",
-        booked: false
-      },
-    ]
-  },
-  {
-    day : "Fri",
-    date: "10-24-18",
-    times: [
-      {
-        time: "9:00am",
-        booked: false
-      },
-      {
-        time: "10:15am",
-        booked: false
-      },
-      {
-      time: "11:00am",
-      booked: false
-      },
-      {
-        time: "12:00pm",
-        booked: false
-      },
-      {
-        time: "1:00pm",
-        booked: false
-      },
-      {
-        time: "2:15pm",
-        booked: false
-      },
-      {
-      time: "2:30pm",
-      booked: false
-      },
-      {
-        time: "3:00pm",
-        booked: false
-      },
-      {
-        time: "4:30pm",
-        booked: false
-      },
-    ]
-  }
-];
-
-
 class DayPicker extends Component {
   componentWillMount(){
     const events = this.props.calendarData.events
@@ -200,12 +29,12 @@ class DayPicker extends Component {
   }
 
   render() {
-    console.log(this.days)
     // Array of Day mini COMPONENTS
-    const daysDisplay = this.days.map(function(dayData, index){
+    console.log(this.props)
+    const daysDisplay = this.days.map((dayData, index) => {
       return (
         <li key={index} className={"day-item"}>
-          <Day data={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
+          <Day data={dayData} click={() => this.props.clickedDay(dayData)}/>
         </li>
       )
     });
@@ -219,7 +48,7 @@ class DayPicker extends Component {
 // Mini COMPONENT
 function Day(props) {
   return (
-    <div onClick={props.clickedDay} className="day">
+    <div onClick={props.click} className="day">
       <p className="day-text">{props.data.day}</p>
       <p className="day-date">{props.data.date}</p>
     </div>
