@@ -43,7 +43,6 @@ class DayPicker extends Component {
       )
     });
 
-
     return (
       <div className={"day-container"}>{daysDisplay}</div>
     )
