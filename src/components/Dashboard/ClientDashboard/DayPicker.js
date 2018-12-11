@@ -18,7 +18,7 @@ class DayPicker extends Component {
       const weekdayName = weekdayNames[weekday]
       const longDisplay = `${startTime.getMonth()}-${startTime.getDate()}-${startTime.getFullYear()}`
 
-      if(days.includes(weekday) === false){
+      if(!days[weekday]){
         days[weekday] = {
           day: weekdayName,
           date: longDisplay,
@@ -26,6 +26,7 @@ class DayPicker extends Component {
         }
       }
       else{
+        console.log(days)
         days[weekday].times.push({event, format: {start: startFormat, end: endFormat}})
       }
     })
@@ -42,6 +43,7 @@ class DayPicker extends Component {
         </li>
       )
     });
+
 
     return (
       <div className={"day-container"}>{daysDisplay}</div>
