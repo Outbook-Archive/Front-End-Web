@@ -5,6 +5,8 @@ import './TimePicker.css'
 class TimePicker extends Component {
 
   render() {
+    console.log(this.props, "=======================")
+
     // Set up columns
     const times = this.props.activeDay.times.map((timeData, index) => {
       return <Time
@@ -12,11 +14,10 @@ class TimePicker extends Component {
         time={timeData}
         clickedTime={() => this.props.clickedTime(timeData.time)}/>
     })
-
     return (
       <div className="time-picker-container">
-        <div className="day-name">{this.props.activeDay.day}</div>
-        <div className="day-date">{this.props.activeDay.date}</div>
+        {/* <div className="day-name">{this.props.activeDay.day}</div>
+        <div className="day-date">{this.props.activeDay.date}</div> */}
         <div className="time-container">
           {times}
         </div>
@@ -30,7 +31,7 @@ class TimePicker extends Component {
 function Time(props) {
   return (
     <div onClick={props.clickedTime} className="time">
-      <p className="time-text">{ props.time.time }</p>
+      {/* <p className="time-text">{ props.time.time }</p> */}
     </div>
   )
 }

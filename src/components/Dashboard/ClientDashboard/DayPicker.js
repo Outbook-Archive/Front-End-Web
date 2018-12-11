@@ -181,12 +181,13 @@ class DayPicker extends Component {
 
     events.forEach(function(event){
       const day = new Date(event.start.dateTime)
-      const weekday = weekdayNames[day.getDay()]
+      const weekday = day.getDay()
+      const weekdayName = weekdayNames[weekday]
       const display = `${day.getMonth()}-${day.getDate()}-${day.getFullYear()}`
 
       if(days.includes(weekday) === false){
         days[weekday] = {
-          day: weekday,
+          day: weekdayName,
           date: display,
           times: [{event}]
         }
@@ -195,20 +196,22 @@ class DayPicker extends Component {
         days[weekday].times.push({event})
       }
     })
+    this.days = days;
   }
 
   render() {
+    console.log(this.days)
     // Array of Day mini COMPONENTS
-    const days = MockDays.map((dayData, index) => {
+    const daysDisplay = this.days.map(function(dayData, index){
       return (
         <li key={index} className={"day-item"}>
-          <Day day={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
+          <Day data={dayData} clickedDay={() => this.props.clickedDay(dayData)}/>
         </li>
       )
     });
 
     return (
-      <div className={"day-container"}>{days}</div>
+      <div className={"day-container"}>{daysDisplay}</div>
     )
   }
 }
@@ -217,8 +220,8 @@ class DayPicker extends Component {
 function Day(props) {
   return (
     <div onClick={props.clickedDay} className="day">
-      <p className="day-text">{props.day.day}</p>
-      <p className="day-date">{props.day.date}</p>
+      <p className="day-text">{props.data.day}</p>
+      <p className="day-date">{props.data.date}</p>
     </div>
   )
 }
