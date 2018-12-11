@@ -26,7 +26,6 @@ class DayPicker extends Component {
         }
       }
       else{
-        console.log(days)
         days[weekday].times.push({event, format: {start: startFormat, end: endFormat}})
       }
     })
