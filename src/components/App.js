@@ -9,7 +9,7 @@ import Login from './Login/Login'
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
 import Confirm from './Dashboard/ClientDashboard/Confirm'
-
+import Complete from './Complete/Complete'
 
 import './App.css'
 
@@ -48,7 +48,7 @@ class App extends Component {
           <div className="landing-container">
             <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard}/>
-            <Route path='/confirm' component={Confirm} />
+            <Route path='/complete' component={Complete}/>
           </div>
         </div>
       </BrowserRouter>
