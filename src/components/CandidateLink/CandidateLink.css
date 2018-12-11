@@ -1,13 +1,16 @@
 .link-container {
   margin-top: 10rem;
+  background-color: red;
 }
 
-.link-container input {
+.link-input {
   min-width: 300px;
   min-height: 50px;
+  background-color: red;
+  color: red;
 }
 
-.link-container button {
+.button.copy-btn {
   min-width: 300px;
   min-height: 50px;
 }
