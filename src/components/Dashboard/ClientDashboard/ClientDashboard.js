@@ -91,7 +91,6 @@ class ClientDashboard extends Component {
   }
 
   daySelect(day) {
-    console.log(day)
     this.setState({ activeDay: day, activeView: 'timePicker' });
   }
 

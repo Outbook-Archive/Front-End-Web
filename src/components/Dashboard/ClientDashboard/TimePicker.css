@@ -58,6 +58,11 @@
 	margin: 0;
 }
 
+.time-text.connector{
+  font-size: 1rem;
+  font-weight: 300;
+}
+
 .back-btn-blue {
   margin: .4rem;
 	padding: .75rem;

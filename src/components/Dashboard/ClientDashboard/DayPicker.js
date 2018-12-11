@@ -13,7 +13,6 @@ class DayPicker extends Component {
       const weekday = day.getDay()
       const weekdayName = weekdayNames[weekday]
       const display = `${day.getMonth()}-${day.getDate()}-${day.getFullYear()}`
-
       if(days.includes(weekday) === false){
         days[weekday] = {
           day: weekdayName,
@@ -30,7 +29,7 @@ class DayPicker extends Component {
 
   render() {
     // Array of Day mini COMPONENTS
-    console.log(this.props)
+    console.log(this.days)
     const daysDisplay = this.days.map((dayData, index) => {
       return (
         <li key={index} className={"day-item"}>
