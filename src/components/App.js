@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
@@ -7,17 +6,18 @@ import Navbar from '../components/Navbar/Navbar'
 import SideDrawer from '../components/SideDrawer/SideDrawer'
 import Backdrop from '../components/Backdrop/Backdrop'
 
+import Login from './Login/Login'
 import Landing from './Landing/Landing'
 import Dashboard from './Dashboard/Dashboard'
-import Confirm from './Dashboard/Confirm'
+import Confirm from './Dashboard/ClientDashboard/Confirm'
+
 
 import './App.css'
-import { simpleAction } from "../actions/SimpleAction";
 
 class App extends Component {
   state = {
     sideDrawerOpen: false
-  }
+  };
 
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {
@@ -27,7 +27,7 @@ class App extends Component {
 
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
-  }
+  };
 
   simpleAction = (event) => {
     this.props.simpleAction();
@@ -42,33 +42,19 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <Route exact path='/login' component={Login} />
           <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
-            <Route exact path='/' component={Landing}/>
+            <Route exact path='/landing' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
           </div>
-          {/*<pre>*/}
-            {/*{*/}
-              {/*JSON.stringify(this.props)*/}
-            {/*}*/}
-          {/*</pre>*/}
-
-          {/*<button onClick={this.simpleAction}>Test redux action</button>*/}
         </div>
       </BrowserRouter>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

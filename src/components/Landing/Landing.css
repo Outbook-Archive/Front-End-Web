@@ -1,10 +1,14 @@
 .landing-link {
 	text-decoration: none;
-	margin-top: 5rem;
+	margin-top: 3rem;
+  background-color: var(--medium-blue);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
 }
 
 .landing-subheader {
 	margin: 0;
 	padding: 0;
-	top:0;
+	top:56px;
 }
