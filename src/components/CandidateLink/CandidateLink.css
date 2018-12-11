@@ -1,0 +1,13 @@
+.link-container {
+  margin-top: 10rem;
+}
+
+.link-container input {
+  min-width: 300px;
+  min-height: 50px;
+}
+
+.link-container button {
+  min-width: 300px;
+  min-height: 50px;
+}
