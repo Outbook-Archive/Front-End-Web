@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './CandidateLink.css';
 
-function CandidateLink() {
+class CandidateLink extends Component {
 
-  const containerStyle = {
-    "marginTop": "10rem",
-    "background-color": "red"
+  copyTxt = () => {
+    
   }
 
-  return (
-    <div className='link-container'>
-      <input placeholder="984rkjnkjfnf98qhgkqerf" style={containerStyle} className='link-input'></input>
-      <button className='copy-btn'></button>
-    </div>
-  )
+  render() {
+    return (
+      <div className='link-container'>
+        <div className='link-box' type='text'>
+          984rkjnkjfnf98qhgkqerf
+        </div>
+        <button className='copy-btn' onClick={this.copyTxt}>copy</button>
+      </div>
+    )
+  }
+
 }
 
 export default CandidateLink;

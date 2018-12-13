@@ -1,16 +1,33 @@
-.link-container {
+
+.input-container {
   margin-top: 10rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1px;
+  height: 50px;
+  border: 1px solid black;
   background-color: red;
 }
 
-.link-input {
-  min-width: 300px;
-  min-height: 50px;
-  background-color: red;
-  color: red;
+.link-box {
+  height: 100%;
+  width: 300px;
+  border: 0px solid black;
 }
 
-.button.copy-btn {
-  min-width: 300px;
-  min-height: 50px;
+.copy-btn {
+  position: relative;
+  height: 105%;
+  background-color: lightgrey;
+  border: 1px solid black;
+  left: 1px;
+}
+
+button:focus {
+    outline: none;
+}
+
+input:focus {
+  outline: none;
 }
