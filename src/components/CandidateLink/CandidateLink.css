@@ -1,0 +1,17 @@
+.link-container {
+
+  /* SIZING */
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 3rem;
+  padding: 1rem;
+
+  /* FLEXBOX */
+  display: flex;
+  justify-content: center;
+}
+
+.link-copy {
+  border: 1px solid black;
+}

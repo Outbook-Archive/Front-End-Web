@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root {
+	--dark-grey: #7f8c8d;
+	--dark-blue: #34495e;
+	--medium-blue: #2980b9;
+}
+
 html {
 	height: 100%;
 }

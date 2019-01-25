@@ -1,10 +1,10 @@
 import React from 'react';
 import './CandidateLink.css';
 
-function CandidateLink() {
+const CandidateLink = () => {
   return (
     <div className='link-container'>
-      <input placeholder="984rkjnkjfnf98qhgkqerf"></input>
+      <input  className='link-copy' placeholder='984rkjnkjfnf98qhgkqerf'></input>
       <button className='copy-btn'></button>
     </div>
   )
