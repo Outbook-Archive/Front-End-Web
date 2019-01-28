@@ -84,6 +84,7 @@ class Confirm extends Component {
                     handleFrmData={this.handleFrmData}
                     id={this.props.time.event.id}
                     utc={this.props.time.event.start.dateTime}
+                    calendarId={this.props.calendarId}
         />
       </div>
     )
@@ -97,7 +98,7 @@ function EmailForm (props) {
   return (
     <form className="confirm-form"
           method="POST"
-          action="https://outbook-us.herokuapp.com/calendar/interviewer/5c0f2512a86da2001650b964"
+          action={"http://localhost:3001/calendar/interviewer/" + props.calendarId}
           target="_blank">
       <h1>Enter Your Information</h1>
 

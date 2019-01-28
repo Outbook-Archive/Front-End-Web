@@ -48,7 +48,7 @@ class App extends Component {
           {backDrop}
           <div className="landing-container">
             <Route exact path='/' component={Landing} />
-            <Route exact path='/dashboard' component={Dashboard}/>
+            <Route exact path='/dashboard/:calendarId' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
             <Route path='/complete' component={Complete}/>
             <Route path='/candidateLink' component={CandidateLink} />
