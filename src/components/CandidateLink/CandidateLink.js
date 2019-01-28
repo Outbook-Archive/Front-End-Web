@@ -11,7 +11,7 @@ class CandidateLink extends Component {
   }
 
   componentWillMount() {
-    fetch('http://localhost:3001/authorize/calendar',
+    fetch('http://outbook-us.herokuapp.com/authorize/calendar',
     { credentials: 'include' })
       .then( res => {
         let clone = res.clone()

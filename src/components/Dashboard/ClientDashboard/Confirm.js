@@ -98,7 +98,7 @@ function EmailForm (props) {
   return (
     <form className="confirm-form"
           method="POST"
-          action={"http://localhost:3001/calendar/interviewer/" + props.calendarId}
+          action={"http://outbook-us.herokuapp.com/calendar/interviewer/" + props.calendarId}
           target="_blank">
       <h1>Enter Your Information</h1>
 
