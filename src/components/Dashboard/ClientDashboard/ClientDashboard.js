@@ -14,6 +14,7 @@ class ClientDashboard extends Component {
 
     this.state = {
       calendarData: null,
+      calendarId: this.props.calendarId.calendarId,
       activeView: 'dayPicker',
       activeDay: null,
       activeTime: null
@@ -21,7 +22,7 @@ class ClientDashboard extends Component {
   }
 
   componentWillMount(){
-    const url = 'https://outbook-us.herokuapp.com/calendar/interviewer/5c0f445cd30a700016777112'
+    const url = 'http://outbook-us.herokuapp.com/calendar/interviewer/' + this.state.calendarId
     fetch(url).then(data => {
       return data.json()
     }).then(json => {
@@ -78,6 +79,7 @@ class ClientDashboard extends Component {
           <div className="confirm-view-content">
             <div className="dashboard-title">Please review your interview day and time</div>
             <Confirm
+              calendarId={this.state.calendarId}
               day={this.state.activeDay}
               time={this.state.activeTime}
               backButton={ () => this.backButton('toTimePicker')}

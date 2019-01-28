@@ -1,33 +1,73 @@
+.link-container {
 
-.input-container {
-  margin-top: 10rem;
+  /* SIZING */
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 3rem;
+  padding: 1rem;
+
+  /* FLEXBOX */
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1px;
-  height: 50px;
-  border: 1px solid black;
-  background-color: red;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.link-container h2 {
+  display: flex;
+  justify-content: center;
+  color: var(--dark-blue);
+}
+
+.interviewer-name {
+  margin-left: .5rem;
+}
+
+.instructions {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--dark-blue);
+}
+
+.box-plus-btn {
+  display: flex;
+  justify-content: center;
 }
 
 .link-box {
-  height: 100%;
-  width: 300px;
-  border: 0px solid black;
+  min-width: 200px;
+  padding: 1rem;
+  border: 1px solid var(--medium-blue);
+  border-right: 0px solid grey;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: var(--medium-blue);
+
+  outline: 0;
+  box-shadow: none !important;
 }
 
 .copy-btn {
-  position: relative;
-  height: 105%;
-  background-color: lightgrey;
-  border: 1px solid black;
-  left: 1px;
+  width: 3rem;
+  background-color: var(--medium-blue);
+  color: white;
+  border: 1px solid var(--medium-blue);
+  border-left: 0px solid rgb(88, 28, 128);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
 }
 
-button:focus {
-    outline: none;
+.copy-btn:hover {
+  border: 1px solid var(--light-blue);
+  background-color: var(--light-blue); 
+  font-size: 0.75rem;
 }
 
-input:focus {
-  outline: none;
+.copy-btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+  border: 1px solid var(--medium-dark-blue);
+  background-color: var(--medium-dark-blue);
 }
