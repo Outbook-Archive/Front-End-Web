@@ -29,8 +29,6 @@ class CandidateLink extends Component {
   copyToClipboard = (e) => {
     this.textArea.select();
     document.execCommand('copy');
-    // This is just personal preference.
-    // I prefer to not show the the whole text area selected.
     e.target.focus();
     alert("Copied the text: " + this.textArea.value);
   };
