@@ -50,9 +50,8 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard/:calendarId' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
-            <Route path='/complete' component={Complete}/>
+            <Complete/>
             <Route path='/candidateLink' component={CandidateLink} />
-            <Route path='/complete' component={Complete}/>
           </div>
         </div>
       </BrowserRouter>
