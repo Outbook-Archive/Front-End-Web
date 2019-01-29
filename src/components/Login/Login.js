@@ -9,7 +9,7 @@ class Login extends Component {
 
     	    <h1 className='form-title'>Login with Microsoft account</h1>
     	    <button className='btn-submit' type="submit">
-    	      <a className='btn-link' href={'http://outbook-us.herokuapp.com/'} >Sign in to Outlook</a>
+    	      <a className='btn-link' href={'http://outbook-us.herokuapp.com/'} >Sign into Outlook</a>
     	    </button>
 
     	  </div>

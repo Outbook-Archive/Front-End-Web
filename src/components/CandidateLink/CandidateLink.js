@@ -5,6 +5,7 @@ class CandidateLink extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      isLoggedIn: false,
       candidateLink: null,
       interviewerName: 'Shaniah'
      }
@@ -20,6 +21,7 @@ class CandidateLink extends Component {
       .then( data => {
         console.log(data);
         this.setState({
+          isLoggedIn: true,
           candidateLink: data.calendarUrl,
           interviewerName: data.interviewerName
          });
