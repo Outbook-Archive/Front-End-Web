@@ -16,7 +16,8 @@ import './App.css'
 
 class App extends Component {
   state = {
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    userLoggedIn: false,
   };
 
   drawerToggleClickHandler = () => {
@@ -43,7 +44,10 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path='/login' component={Login} />
-          <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <Navbar 
+            drawerClickHandler={this.drawerToggleClickHandler} 
+            loginStatus={this.state.userLoggedIn} 
+          />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
