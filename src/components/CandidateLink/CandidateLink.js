@@ -4,7 +4,7 @@ import './CandidateLink.css';
 class CandidateLink extends Component {
   constructor(props) {
     super(props)
-    this.state = { 
+    this.state = {
       candidateLink: null,
       interviewerName: 'Shaniah'
      }
@@ -19,7 +19,7 @@ class CandidateLink extends Component {
       })
       .then( data => {
         console.log(data);
-        this.setState({ 
+        this.setState({
           candidateLink: data.calendarUrl,
           interviewerName: data.interviewerName
          });
@@ -32,16 +32,16 @@ class CandidateLink extends Component {
     e.target.focus();
     alert("Copied the text: " + this.textArea.value);
   };
-  
+
   render() {
     return (
       <div className='link-container'>
         <h2>Welcome <span className='interviewer-name'>{ this.state.interviewerName }</span></h2>
         <p className='instructions'>Click the copy button to copy a link and paste it into an email to send to your interview candidate.</p>
         <div className='box-plus-btn'>
-          <input  
+          <input
               className='link-box'
-              ref={ (textarea) => this.textArea = textarea}                   
+              ref={ (textarea) => this.textArea = textarea}
               value={ this.state.candidateLink }>
           </input>
           <button className='copy-btn' onClick={ this.copyToClipboard }>copy</button>

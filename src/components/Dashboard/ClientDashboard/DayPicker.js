@@ -18,7 +18,7 @@ class DayPicker extends Component {
       const weekdayName = weekdayNames[weekday]
       const longDisplay = `${startTime.getMonth()}-${startTime.getDate()}-${startTime.getFullYear()}`
 
-      if(days.includes(weekday) === false){
+      if(!days[weekday]){
         days[weekday] = {
           day: weekdayName,
           date: longDisplay,
@@ -61,9 +61,9 @@ function Day(props) {
 
 // Getting time
 function getTime(date){
-  const hour = date.getHours() % 12
+  const hour = (date.getHours() % 12 === 0 ? 12 : date.getHours() % 12)
   const min = String(date.getMinutes()).padStart(2, '0')
-  const time = ((hour === 0) || (hour > 12) ? 'AM' : 'PM')
+  const time = ((date.getHours() === 0) || (date.getHours() < 12) ? 'AM' : 'PM')
   return `${hour}:${min}${time}`
 }
 

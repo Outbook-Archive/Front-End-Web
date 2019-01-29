@@ -6,7 +6,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard-container">
-        <ClientDashboard />
+        <ClientDashboard calendarId={this.props.match.params}/>
       </div>
     )
   }

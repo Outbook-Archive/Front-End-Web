@@ -5,8 +5,8 @@ import './Complete.css'
 function Complete(){
   return (
     <div className="complete-container">
-      <Route path="/complete/success" component={Success}/>
-      <Route path="/complete/failure" component={Failure}/>
+      <Route path="/success" component={Success}/>
+      <Route path="/failure" component={Failure}/>
     </div>
   )
 }
