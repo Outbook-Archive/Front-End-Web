@@ -17,11 +17,8 @@ const navbar = props => (
 	        <Link to="/login">
 		        <li>Login</li>
 	        </Link>
-	        <Link to="/dashboard">
-		        <li>Dashboard</li>
-	        </Link>
         </ul>
-      </div> {/* END toolbar-navigation-items */}
+      </div>
     </nav>
   </header>
 );
