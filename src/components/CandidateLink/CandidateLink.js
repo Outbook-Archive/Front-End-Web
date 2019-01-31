@@ -4,7 +4,7 @@ import './CandidateLink.css';
 class CandidateLink extends Component {
 
   componentWillMount() {
-    fetch('http://outbook-us.herokuapp.com/authorize/calendar',
+    fetch('http://outbook-us.herokuapp.com/authorize/calendar', 
     { credentials: 'include' })
       .then( res => {
         let clone = res.clone()
