@@ -4,44 +4,25 @@ import { Link } from 'react-router-dom';
 import DrawerToggleBtn from '../SideDrawer/DrawerToggleBtn';
 import './Navbar.css';
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props)
+const navbar = props => (
+  <header className="navbar">
+    <nav className="navbar-navigation">
+      <div className="navbar-toggle-btn">
+        <DrawerToggleBtn click={props.drawerClickHandler} />
+      </div>
+      <div className="navbar-logo"><a href="/">OUTBOOK</a></div>
+      <div className="spacer"/>
+      <div className="navbar-navigation-items">
+        <ul>
+          { props.logged 
+            ? <Link to="/"><li>Logout</li></Link>
+            : <Link to="/login"><li>Login</li></Link>
+          }
 
-    this.state = {
+        </ul>
+      </div>
+    </nav>
+  </header>
+);
 
-    }
-  }
-
-  render() {
-    return(
-      <header className="navbar">
-        <nav className="navbar-navigation">
-          <div className="navbar-toggle-btn">
-            <DrawerToggleBtn />
-            {/* <DrawerToggleBtn onClick={drawerClickHandler} /> */}
-          </div>
-          <div className="navbar-logo"><a href="/">OUTBOOK</a></div>
-          <div className="spacer"/>
-
-          <div className="navbar-navigation-items">
-            <ul>
-              <Link to="/login">
-                <li>Login</li>
-              </Link>
-              <Link to="/dashboard">
-                <li>Dashboard</li>
-              </Link>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    )
-  }
-}
-
-
-
-
-
-export default Navbar;
+export default navbar;
