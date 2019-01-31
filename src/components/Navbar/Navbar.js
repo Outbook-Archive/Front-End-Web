@@ -14,9 +14,11 @@ const navbar = props => (
       <div className="spacer"/>
       <div className="navbar-navigation-items">
         <ul>
-	        <Link to="/login">
-		        <li>Login</li>
-	        </Link>
+          { props.logged 
+            ? <Link to="/"><li>Logout</li></Link>
+            : <Link to="/login"><li>Login</li></Link>
+          }
+
         </ul>
       </div>
     </nav>

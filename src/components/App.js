@@ -21,12 +21,20 @@ class App extends Component {
     this.state = {
       sideDrawerOpen: false,
       isLoggedIn: false,
+ 
     };
   }
 
-  handleLogin = (loggedIn) => {
+  handleLogin = (l) => {
+    console.log("Hello there? I'm logging in")
     this.setState({
       isLoggedIn: true,
+    })
+  }
+
+  handleLogout = (l) => {
+    this.setState({
+      isLoggedIn: false,
     })
   }
   
@@ -55,7 +63,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path='/login' component={Login} />
-          <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <Navbar drawerClickHandler={this.drawerToggleClickHandler} logged={this.state.isLoggedIn}/>
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
           <div className="landing-container">
@@ -63,7 +71,18 @@ class App extends Component {
             <Route exact path='/dashboard/:calendarId' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
             <Complete/>
-            <Route path='/candidateLink' component={CandidateLink} />
+            <Route 
+              path='/candidateLink' 
+              render = {
+                () => {
+                  return <CandidateLink 
+                    handleLogin={this.handleLogin} 
+                    name={this.interviewerName} 
+                    candidateLink={this.candidateLink} 
+                  />
+                }
+              }
+            />
           </div>
         </div>
       </BrowserRouter>
