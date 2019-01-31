@@ -15,11 +15,29 @@ import CandidateLink from './CandidateLink/CandidateLink'
 import './App.css'
 
 class App extends Component {
-  state = {
-    sideDrawerOpen: false,
-    userLoggedIn: false,
-  };
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      sideDrawerOpen: false,
+      isLoggedIn: false,
+ 
+    };
+  }
 
+  handleLogin = (l) => {
+    console.log("Hello there? I'm logging in")
+    this.setState({
+      isLoggedIn: true,
+    })
+  }
+
+  handleLogout = (l) => {
+    this.setState({
+      isLoggedIn: false,
+    })
+  }
+  
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen }
@@ -55,7 +73,18 @@ class App extends Component {
             <Route exact path='/dashboard/:calendarId' component={Dashboard}/>
             <Route path='/confirm' component={Confirm} />
             <Complete/>
-            <Route path='/candidateLink' component={CandidateLink} />
+            <Route 
+              path='/candidateLink' 
+              render = {
+                () => {
+                  return <CandidateLink 
+                    handleLogin={this.handleLogin} 
+                    name={this.interviewerName} 
+                    candidateLink={this.candidateLink} 
+                  />
+                }
+              }
+            />
           </div>
         </div>
       </BrowserRouter>
