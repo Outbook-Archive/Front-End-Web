@@ -15,9 +15,21 @@ import CandidateLink from './CandidateLink/CandidateLink'
 import './App.css'
 
 class App extends Component {
-  state = {
-    sideDrawerOpen: false
-  };
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      sideDrawerOpen: false,
+      isLoggedIn: false,
+    };
+  }
+
+  handleLogin = (loggedIn) => {
+    this.setState({
+      isLoggedIn: true,
+    })
+  }
+  
 
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {

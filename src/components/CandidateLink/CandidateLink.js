@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import './CandidateLink.css';
 
 class CandidateLink extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      candidateLink: null,
-      interviewerName: 'Shaniah'
-     }
-  }
 
   componentWillMount() {
     fetch('http://outbook-us.herokuapp.com/authorize/calendar',
