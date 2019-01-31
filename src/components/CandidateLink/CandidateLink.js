@@ -15,7 +15,7 @@ class CandidateLink extends Component {
         this.props.handleLogin();
 
         if(data) {
-          this.name =  "data.interviewerName"
+          this.name =  data.interviewerName
           this.candidateLink = data.calendarUrl
         }
         
