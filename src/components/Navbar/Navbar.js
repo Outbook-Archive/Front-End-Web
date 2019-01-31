@@ -14,14 +14,13 @@ const navbar = props => (
       <div className="spacer"/>
       <div className="navbar-navigation-items">
         <ul>
-	        <Link to="/login">
-		        <li>Login</li>
-	        </Link>
-	        <Link to="/dashboard">
-		        <li>Dashboard</li>
-	        </Link>
+          { props.logged 
+            ? <Link to="/"><li>Logout</li></Link>
+            : <Link to="/login"><li>Login</li></Link>
+          }
+
         </ul>
-      </div> {/* END toolbar-navigation-items */}
+      </div>
     </nav>
   </header>
 );
