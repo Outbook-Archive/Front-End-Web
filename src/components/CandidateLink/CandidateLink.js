@@ -17,8 +17,9 @@ class CandidateLink extends Component {
 
         if(data) {
           console.log('Data: ', data)
-          this.name =  data.interviewerName
-          this.candidateLink = data.calendarUrl
+          this.name =  data.interviewerName;
+          this.candidateLink = data.calendarUrl;
+          console.log('this.name: ', this.name )
         }
       })
   }
@@ -33,7 +34,7 @@ class CandidateLink extends Component {
   render() {
     return (
       <div className='link-container'>
-        <h2>Welcome <span className='interviewer-name'>{ this.data.interviewerName }</span></h2>
+        <h2>Welcome <span className='interviewer-name'>{ this.name }</span></h2>
         <p className='instructions'>Click the copy button to copy a link and paste it into an email to send to your interview candidate.</p>
         <div className='box-plus-btn'>
           <input
