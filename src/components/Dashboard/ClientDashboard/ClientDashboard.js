@@ -22,7 +22,7 @@ class ClientDashboard extends Component {
   }
 
   componentWillMount(){
-    const url = 'http://outbook-us.herokuapp.com/calendar/interviewer/' + this.state.calendarId
+    const url = `${process.env.REACT_APP_BACK_END_LINK}/calendar/interviewer/${this.state.calendarId}`
     fetch(url).then(data => {
       return data.json()
     }).then(json => {
